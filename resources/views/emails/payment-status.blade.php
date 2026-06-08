@@ -154,15 +154,19 @@
 
                                         <td align="center">
 
-                                            <a href="{{ $order->course->whatsapp ?? 'N/A' }}"
-                                                style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
-                                                WhatsApp Support
-                                            </a>
+                                            @if (!empty($order->course->whatsapp))
+                                                <a href="{{ $order->course->whatsapp }}"
+                                                    style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
+                                                    WhatsApp Support
+                                                </a>
+                                            @endif
 
-                                            <a href="{{ $order->course->drive ?? 'N/A' }}"
-                                                style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
-                                                Course Drive Link
-                                            </a>
+                                            @if (!empty($order->course->drive))
+                                                <a href="{{ $order->course->drive }}"
+                                                    style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
+                                                    Course Drive Link
+                                                </a>
+                                            @endif
 
                                         </td>
 
