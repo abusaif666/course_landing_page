@@ -1,0 +1,249 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: #f5f5f5;
+            padding: 25px;
+            color: #111827;
+        }
+
+        .checkout-wrapper {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .checkout-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .top-border {
+            height: 1px;
+            background: #e5e7eb;
+            margin-bottom: 20px;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr .9fr;
+            gap: 25px;
+        }
+
+        /* LEFT SIDE */
+
+        .left-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .course-top {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .course-top img {
+            width: 110px;
+            border-radius: 10px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+
+        .coupon {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #16a34a;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 18px 0;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .support {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.7;
+            flex-wrap: wrap;
+        }
+
+        .support span {
+            color: #ff7a00;
+            font-weight: 700;
+        }
+
+        /* RIGHT SIDE */
+
+        .right-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .right-inner {
+            padding: 22px;
+        }
+
+        .payment-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* FORM */
+
+        .user_details_form {
+            margin-top: 10px;
+        }
+
+        .form_controll_wrapper {
+            margin-bottom: 18px;
+        }
+
+        .form_controll_wrapper label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .form_controll_wrapper input {
+            width: 100%;
+            height: 54px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            padding: 0 16px;
+            font-size: 15px;
+            font-family: 'Hind Siliguri', sans-serif;
+            outline: none;
+            transition: .3s;
+            background: #fff;
+        }
+
+        .form_controll_wrapper input:focus {
+            border-color: #facc15;
+            box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.15);
+        }
+
+        .form_controll_wrapper input::placeholder {
+            color: #9ca3af;
+        }
+
+        .form_controll_wrapper.error input {
+            border-color: #ef4444;
+        }
+
+        .form_controll_wrapper.success input {
+            border-color: #22c55e;
+        }
+
+        .error_message {
+            display: none;
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .form_controll_wrapper.error .error_message {
+            display: block;
+        }
+
+        .form_controll_btn_wrapper {
+            margin-top: 25px;
+        }
+
+        .submit_btn {
+            width: 100%;
+            height: 56px;
+            border: none;
+            border-radius: 12px;
+            background: #facc15;
+            color: #111827;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Hind Siliguri', sans-serif;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .submit_btn:hover {
+            background: #fbbf24;
+            transform: translateY(-2px);
+        }
+
+        .submit_btn.loading {
+            opacity: .7;
+            pointer-events: none;
+        }
+
+        @media(max-width:991px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-title {
+                font-size: 28px;
+            }
+
+            .course-top {
+                flex-direction: column;
+            }
+
+            .support {
+                font-size: 16px;
+            }
+        }
