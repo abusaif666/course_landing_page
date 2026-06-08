@@ -31,7 +31,6 @@ class OrderController extends Controller
             $order->update([
                 'payment_status' => $request->payment_status,
                 'payment_method' => 'Unknown',
-                'order_status' => 'approved',
             ]);
 
             setMailConfig('payment');

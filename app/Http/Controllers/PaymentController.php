@@ -55,7 +55,6 @@ class PaymentController extends Controller
                 'transaction_id'  => $transactionId,
                 'payment_method' => 'UddoktaPay',
                 'payment_status' => 'pending',
-                'order_status' => 'pending',
             ]);
 
             $paymentData = [
@@ -165,7 +164,6 @@ class PaymentController extends Controller
 
         $order->update([
             'payment_status' => strtolower($request->status),
-            'order_status' => 'approved',
             'payment_method' => $request->payment_method,
         ]);
 

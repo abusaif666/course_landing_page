@@ -482,6 +482,10 @@ li {
     color: #283c50;
 }
 
+.custom-table td .copy_area{
+    display: flex;
+}
+
 .custom-table tbody tr {
     border-bottom: 1px solid #E5E7EB;
     transition: .3s;

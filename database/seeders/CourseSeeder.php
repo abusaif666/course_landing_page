@@ -18,6 +18,8 @@ class CourseSeeder extends Seeder
             'discount_price' => 1500,
             'type' => 1,
             'status' => 1,
+            'whatsapp' => 'www.whatsapp.com',
+            'drive' => 'www.google.drive.com',
         ]);
     }
 }

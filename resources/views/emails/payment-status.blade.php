@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +9,7 @@
 
 <body style="margin:0;padding:0;background:#f4f7fb;font-family:Arial,sans-serif;">
 
-    <table width="100%" cellpadding="0" cellspacing="0" border="0"
-        style="background:#f4f7fb;padding:30px 15px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f7fb;padding:30px 15px;">
 
         <tr>
             <td align="center">
@@ -24,26 +22,22 @@
                         <td
                             style="background:linear-gradient(135deg,#2563eb,#1e40af);padding:35px 20px;text-align:center;color:#fff;">
 
-                            @if($order->payment_status == 'completed')
+                            @if ($order->payment_status == 'completed')
+                                <h1 style="margin:0;font-size:30px;">
+                                    ✅ Payment Successful
+                                </h1>
 
-                            <h1 style="margin:0;font-size:30px;">
-                                ✅ Payment Successful
-                            </h1>
-
-                            <p style="margin-top:10px;font-size:15px;opacity:.9;">
-                                আপনার পেমেন্ট সফলভাবে সম্পন্ন হয়েছে
-                            </p>
-
+                                <p style="margin-top:10px;font-size:15px;opacity:.9;">
+                                    আপনার পেমেন্ট সফলভাবে সম্পন্ন হয়েছে
+                                </p>
                             @else
+                                <h1 style="margin:0;font-size:30px;">
+                                    ⏳ Payment Pending
+                                </h1>
 
-                            <h1 style="margin:0;font-size:30px;">
-                                ⏳ Payment Pending
-                            </h1>
-
-                            <p style="margin-top:10px;font-size:15px;opacity:.9;">
-                                আপনার পেমেন্ট এখনো যাচাই করা হয়নি
-                            </p>
-
+                                <p style="margin-top:10px;font-size:15px;opacity:.9;">
+                                    আপনার পেমেন্ট এখনো যাচাই করা হয়নি
+                                </p>
                             @endif
 
                         </td>
@@ -57,138 +51,134 @@
                                 Dear <strong>{{ $order->name }}</strong>,
                             </p>
 
-                            @if($order->payment_status == 'completed')
+                            @if ($order->payment_status == 'completed')
+                                <p style="color:#555;line-height:1.8;font-size:15px;">
+                                    অভিনন্দন 🎉 আপনার কোর্স অর্ডার সফলভাবে সম্পন্ন হয়েছে।
+                                    নিচে আপনার অর্ডারের বিস্তারিত তথ্য দেওয়া হলো।
+                                </p>
 
-                            <p style="color:#555;line-height:1.8;font-size:15px;">
-                                অভিনন্দন 🎉 আপনার কোর্স অর্ডার সফলভাবে সম্পন্ন হয়েছে।
-                                নিচে আপনার অর্ডারের বিস্তারিত তথ্য দেওয়া হলো।
-                            </p>
+                                <!-- Info Box -->
+                                <table width="100%" cellpadding="0" cellspacing="0"
+                                    style="margin-top:25px;border-collapse:collapse;">
 
-                            <!-- Info Box -->
-                            <table width="100%" cellpadding="0" cellspacing="0"
-                                style="margin-top:25px;border-collapse:collapse;">
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Name
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
+                                            {{ $order->name }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Name
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
-                                        {{ $order->name }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Email
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
+                                            {{ $order->email }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Email
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
-                                        {{ $order->email }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Phone
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
+                                            {{ $order->phone }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Phone
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
-                                        {{ $order->phone }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Course
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
+                                            {{ $order->course->title ?? 'N/A' }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Course
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
-                                        {{ $order->course->title ?? 'N/A' }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Amount
+                                        </td>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;color:#16a34a;font-weight:bold;">
+                                            ৳ {{ $order->course_price }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Amount
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#16a34a;font-weight:bold;">
-                                        ৳ {{ $order->course_price }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Payment Status
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;">
+                                            <span
+                                                style="background:#dcfce7;color:#15803d;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold;">
+                                                {{ ucfirst($order->payment_status) }}
+                                            </span>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Payment Status
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;">
-                                        <span
-                                            style="background:#dcfce7;color:#15803d;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold;">
-                                            {{ ucfirst($order->payment_status) }}
-                                        </span>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td
+                                            style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
+                                            Transaction ID
+                                        </td>
+                                        <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
+                                            {{ $order->transaction_id }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;border-bottom:1px solid #eee;font-weight:bold;color:#333;">
-                                        Transaction ID
-                                    </td>
-                                    <td style="padding:14px;border-bottom:1px solid #eee;color:#555;">
-                                        {{ $order->transaction_id }}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td style="padding:14px;font-weight:bold;color:#333;">
+                                            Date
+                                        </td>
+                                        <td style="padding:14px;color:#555;">
+                                            {{ $order->created_at->format('d F Y / h:i A') }}
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td
-                                        style="padding:14px;font-weight:bold;color:#333;">
-                                        Date
-                                    </td>
-                                    <td style="padding:14px;color:#555;">
-                                        {{ $order->created_at->format('d F Y / h:i A') }}
-                                    </td>
-                                </tr>
+                                </table>
 
-                            </table>
+                                <!-- Buttons -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                    style="margin-top:35px;">
 
-                            <!-- Buttons -->
-                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                style="margin-top:35px;">
+                                    <tr>
 
-                                <tr>
+                                        <td align="center">
 
-                                    <td align="center">
+                                            <a href="{{ $order->course->whatsapp ?? 'N/A' }}"
+                                                style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
+                                                WhatsApp Support
+                                            </a>
 
-                                        <a href="https://wa.me/8801XXXXXXXXX"
-                                            style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
-                                            WhatsApp Support
-                                        </a>
+                                            <a href="{{ $order->course->drive ?? 'N/A' }}"
+                                                style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
+                                                Course Drive Link
+                                            </a>
 
-                                        <a href="https://drive.google.com/"
-                                            style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:bold;margin:5px;">
-                                            Course Drive Link
-                                        </a>
+                                        </td>
 
-                                    </td>
+                                    </tr>
 
-                                </tr>
-
-                            </table>
-
+                                </table>
                             @else
+                                <p style="color:#555;line-height:1.8;font-size:15px;">
+                                    আপনার পেমেন্ট বর্তমানে যাচাই করা হচ্ছে।
+                                    অনুগ্রহ করে কিছুক্ষণ অপেক্ষা করুন।
+                                </p>
 
-                            <p style="color:#555;line-height:1.8;font-size:15px;">
-                                আপনার পেমেন্ট বর্তমানে যাচাই করা হচ্ছে।
-                                অনুগ্রহ করে কিছুক্ষণ অপেক্ষা করুন।
-                            </p>
-
-                            <div
-                                style="margin-top:25px;background:#fff7ed;padding:18px;border-radius:12px;color:#9a3412;border:1px solid #fdba74;">
-                                ⏳ Payment verification is currently in progress.
-                            </div>
-
+                                <div
+                                    style="margin-top:25px;background:#fff7ed;padding:18px;border-radius:12px;color:#9a3412;border:1px solid #fdba74;">
+                                    ⏳ Payment verification is currently in progress.
+                                </div>
                             @endif
 
                         </td>
@@ -196,8 +186,7 @@
 
                     <!-- Footer -->
                     <tr>
-                        <td
-                            style="background:#f8fafc;padding:25px;text-align:center;font-size:13px;color:#666;">
+                        <td style="background:#f8fafc;padding:25px;text-align:center;font-size:13px;color:#666;">
 
                             © {{ date('Y') }} Your Company Name <br>
                             All Rights Reserved.
@@ -215,4 +204,3 @@
 </body>
 
 </html>
-```

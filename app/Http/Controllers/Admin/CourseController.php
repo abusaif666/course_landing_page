@@ -5,24 +5,22 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
-
     public function index()
     {
         $courses = Course::paginate(10);
+
         return view('admin.course.index', compact('courses'));
     }
-
 
     public function create()
     {
         return view('admin.course.create');
     }
-
 
     public function store(Request $request)
     {
@@ -41,14 +39,14 @@ class CourseController extends Controller
             // টাইটেল থেকে ইউনিক স্লাগ (Slug) তৈরি
             $slug = Str::slug($request->title);
             if (Course::where('slug', $slug)->exists()) {
-                $slug = $slug . '-' . time();
+                $slug = $slug.'-'.time();
             }
 
             // ================= THUMBNAIL UPLOAD =================
             $thumbnailName = null;
             if ($request->hasFile('thumbnail')) {
                 $thumbnail = $request->file('thumbnail');
-                $thumbnailName = time() . '_thumbnail.' . $thumbnail->getClientOriginalExtension();
+                $thumbnailName = time().'_thumbnail.'.$thumbnail->getClientOriginalExtension();
                 $thumbnail->storeAs('course', $thumbnailName, 'public');
             }
 
@@ -62,6 +60,8 @@ class CourseController extends Controller
                 'discount_price' => $request->discount_price ?? 0,
                 'type' => $request->type,
                 'status' => $request->status,
+                'whatsapp' => $request->whatsapp,
+                'drive' => $request->drive,
             ]);
 
             return redirect()->route('course.index')->with('success', 'Course Added Successfully');
@@ -74,16 +74,16 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = Course::findOrFail($id);
+
         return view('admin.course.show', compact('course'));
     }
-
 
     public function edit($id)
     {
         $course = Course::findOrFail($id);
+
         return view('admin.course.update', compact('course'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -103,18 +103,18 @@ class CourseController extends Controller
         try {
             $slug = Str::slug($request->title);
             if (Course::where('slug', $slug)->where('id', '!=', $id)->exists()) {
-                $slug = $slug . '-' . time();
+                $slug = $slug.'-'.time();
             }
 
             // ================= THUMBNAIL UPDATE & OLD DELETE =================
             if ($request->hasFile('thumbnail')) {
                 // আগের ইমেজটি যদি ফোল্ডারে থাকে তবে তা ডিলিট হবে
-                if ($course->thumbnail && Storage::disk('public')->exists('course/' . $course->thumbnail)) {
-                    Storage::disk('public')->delete('course/' . $course->thumbnail);
+                if ($course->thumbnail && Storage::disk('public')->exists('course/'.$course->thumbnail)) {
+                    Storage::disk('public')->delete('course/'.$course->thumbnail);
                 }
 
                 $thumbnail = $request->file('thumbnail');
-                $thumbnailName = time() . '_thumbnail.' . $thumbnail->getClientOriginalExtension();
+                $thumbnailName = time().'_thumbnail.'.$thumbnail->getClientOriginalExtension();
                 $thumbnail->storeAs('course', $thumbnailName, 'public');
             } else {
                 // নতুন ইমেজ না দিলে আগের ইমেজটাই থাকবে
@@ -131,6 +131,8 @@ class CourseController extends Controller
                 'discount_price' => $request->discount_price ?? 0,
                 'type' => $request->type,
                 'status' => $request->status,
+                'whatsapp' => $request->whatsapp,
+                'drive' => $request->drive,
             ]);
 
             return redirect()->route('course.index')->with('success', 'Course Updated Successfully');
@@ -140,15 +142,14 @@ class CourseController extends Controller
         }
     }
 
-    
     public function destroy($id)
     {
         try {
             $course = Course::findOrFail($id);
 
             // ডিলিট করার সময় ফোল্ডার থেকেও ইমেজ ডিলিট করে দেওয়া ভালো প্র্যাকটিস
-            if ($course->thumbnail && Storage::disk('public')->exists('course/' . $course->thumbnail)) {
-                Storage::disk('public')->delete('course/' . $course->thumbnail);
+            if ($course->thumbnail && Storage::disk('public')->exists('course/'.$course->thumbnail)) {
+                Storage::disk('public')->delete('course/'.$course->thumbnail);
             }
 
             $course->delete();

@@ -27,13 +27,12 @@
                 <thead>
                     <tr>
                         <th>Sl</th>
+                        <th>Trx ID</th>
                         <th>Student Details</th>
                         <th>Course</th>
                         <th>Price</th>
                         <th>Payment Method</th>
-                        <th>Trx ID</th>
                         <th>Payment Status</th>
-                        <th>Order Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,43 +40,29 @@
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>
+                                <div class="copy_area">
+                                <span class="copy-text">{{ $order->transaction_id ?? 'N/A' }}</span>
+                                <button class="copy-btn">
+                                    <i class="fa fa-copy"></i>
+                                </button>
+                                </div>
+                            </td>
+                            <td>
                                 <strong>{{ $order->name }}</strong><br>
                                 <small class="text-muted">{{ $order->phone }}</small><br>
                                 <small class="text-muted">{{ $order->email ?? 'No Email' }}</small>
                             </td>
                             <td>{{ $order->course->title ?? 'N/A' }}</td>
                             <td>{{ number_format($order->course_price, 2) }} TK</td>
-                            <td><span class="badge bg-secondary text-uppercase">{{ $order->payment_method ?? 'N/A' }}</span>
+                            <td>{{ $order->payment_method ?? 'N/A' }}</span>
                             </td>
-                            <td><code>{{ $order->transaction_id ?? 'N/A' }}</code></td>
-
-                            {{-- Payment Status Dropdown --}}
                             <td>
-                                <select class="form-control form-control-sm status-change" data-id="{{ $order->id }}"
-                                    name="payment_status" style="width: 130px;">
-
-                                    <option value="pending" {{ $order->payment_status == 'pending' ? 'selected' : '' }}>
-                                        Pending
-                                    </option>
-
-                                    <option value="completed"
-                                        {{ $order->payment_status == 'completed' ? 'selected' : '' }}>
-                                        Completed
-                                    </option>
-
-                                    <option value="failed" {{ $order->payment_status == 'failed' ? 'selected' : '' }}>
-                                        Failed
-                                    </option>
-
-                                    <option value="cancelled"
-                                        {{ $order->payment_status == 'cancelled' ? 'selected' : '' }}>
-                                        Cancelled
-                                    </option>
-
+                                <select class="form-control form-control-sm status-change" data-id="{{ $order->id }}" name="payment_status" style="width: 130px;">
+                                    <option value="pending" {{ $order->payment_status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                    <option value="completed"{{ $order->payment_status == 'completed' ? 'selected' : '' }}>Completed</option>
+                                    <option value="failed" {{ $order->payment_status == 'failed' ? 'selected' : '' }}>Failed</option>
+                                    <option value="cancelled"{{ $order->payment_status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                                 </select>
-                            </td>
-                            <td>
-                                {{ $order->order_status }}
                             </td>
                         </tr>
                     @endforeach
@@ -135,7 +120,7 @@
                         });
                     }
                 });
-                
+
             });
         });
     </script>

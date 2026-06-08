@@ -101,13 +101,37 @@
                         </div>
                     </div>
 
-
                     {{-- Course Description --}}
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Description</label>
                             <textarea class="form-control" name="description" rows="4" placeholder="Enter Course Description">{{ old('description') }}</textarea>
                             @error('description')
+                                <small class="error-text">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+
+                    
+                    {{-- Whatsapp Link --}}
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Whatsapp Link</label>
+                            <input type="text" class="form-control" name="whatsapp" value="{{ old('whatsapp') }}"
+                                placeholder="Whatsapp Link">
+                            @error('whatsapp')
+                                <small class="error-text">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+
+                    {{-- Whatsapp Link --}}
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Drive Link</label>
+                            <input type="text" class="form-control" name="drive" value="{{ old('drive') }}"
+                                placeholder="Drive Link">
+                            @error('drive')
                                 <small class="error-text">{{ $message }}</small>
                             @enderror
                         </div>
