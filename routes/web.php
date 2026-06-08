@@ -143,7 +143,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/checkout/{slug}', [PageController::class, 'checkoutPage'])->name('checkout.page');
 
     // ===== CHECKOUT PAGE =====
-    Route::get('/', [PageController::class, 'home'])->name('home.page');
+    Route::get('/', [PageController::class, 'home'])->name('home.page')->middleware('visitor');
 
     // ================= UDDOKTAPAY STUDENT PAYMENT ROUTES =================
     Route::post('course/pay/{course_id}', [PaymentController::class, 'initiatePayment'])->name('payment.initiate');
