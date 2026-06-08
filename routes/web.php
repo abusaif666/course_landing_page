@@ -33,9 +33,9 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::put('course/{id}', [CourseController::class, 'update'])->name('course.update');
     Route::delete('course/{id}', [CourseController::class, 'destroy'])->name('course.destroy');
 
-    // ================= ORDER MANAGEMENT ROUTES =================
-    Route::get('orders', [OrderController::class, 'index'])->name('order.index');
-    Route::put('admin/orders/update-status/{id}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
+   // ================= ORDER MANAGEMENT ROUTES =================
+Route::get('admin/orders', [OrderController::class, 'index'])->name('order.index');
+Route::put('admin/orders/update-status/{id}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
 
     // ================= COURSE FAQ ROUTES =================
     Route::get('course-faq', [CourseFaqController::class, 'index'])->name('course-faq.index');

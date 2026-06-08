@@ -10,14 +10,34 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
-    // ১. শুধুমাত্র অর্ডারের লিস্ট দেখার জন্য
-    public function index()
+    // ১. অর্ডারের লিস্ট দেখা এবং সার্চ করার জন্য
+    public function index(Request $request)
     {
-        $orders = Order::with('course')->latest()->paginate(15);
+        $query = Order::with('course')->latest();
+
+        // সার্চ কুয়েরি থাকলে ফিল্টার করা হবে
+        if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('transaction_id', 'LIKE', "%{$search}%")
+                  ->orWhere('name', 'LIKE', "%{$search}%")
+                  ->orWhere('phone', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%")
+                  ->orWhereHas('course', function($c) use ($search) {
+                      $c->where('title', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        $orders = $query->paginate(15);
+
+        // যদি Ajax রিকোয়েস্ট হয়, তবে শুধু টেবিল ডাটা রিটার্ন করবে
+        if ($request->ajax()) {
+            return view('admin.order.table', compact('orders'))->render();
+        }
 
         return view('admin.order.index', compact('orders'));
     }
-
 
     public function updateStatus(Request $request, $id)
     {
@@ -34,7 +54,9 @@ class OrderController extends Controller
             ]);
 
             setMailConfig('payment');
-            Mail::to($order->email)->send(new PaymentSuccess($order));
+            if ($order->email) {
+                Mail::to($order->email)->send(new PaymentSuccess($order));
+            }
 
             return response()->json([
                 'status' => 'success',
