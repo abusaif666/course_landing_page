@@ -35,7 +35,7 @@ Route::middleware(['isAdmin'])->group(function () {
 
     // ================= ORDER MANAGEMENT ROUTES =================
     Route::get('orders', [OrderController::class, 'index'])->name('order.index');
-    Route::put('orders/update-status/{id}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
+    Route::put('admin/orders/update-status/{id}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
 
     // ================= COURSE FAQ ROUTES =================
     Route::get('course-faq', [CourseFaqController::class, 'index'])->name('course-faq.index');

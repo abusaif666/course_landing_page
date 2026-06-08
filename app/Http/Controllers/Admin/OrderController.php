@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PaymentSuccess;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -12,24 +14,28 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::with('course')->latest()->paginate(15);
+
         return view('admin.order.index', compact('orders'));
     }
 
-    // ২. অর্ডারের স্ট্যাটাস (Approved/Paid) আপডেট করার জন্য
+
     public function updateStatus(Request $request, $id)
     {
         $order = Order::findOrFail($id);
 
         $request->validate([
-            'payment_status' => 'required|in:pending,paid,failed',
-            'order_status' => 'required|in:pending,approved,rejected',
+            'payment_status' => 'required',
         ]);
 
         try {
             $order->update([
                 'payment_status' => $request->payment_status,
-                'order_status' => $request->order_status,
+                'payment_method' => 'Unknown',
+                'order_status' => 'approved',
             ]);
+
+            setMailConfig('payment');
+            Mail::to($order->email)->send(new PaymentSuccess($order));
 
             return response()->json([
                 'status' => 'success',

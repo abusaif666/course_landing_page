@@ -47,25 +47,37 @@
                             </td>
                             <td>{{ $order->course->title ?? 'N/A' }}</td>
                             <td>{{ number_format($order->course_price, 2) }} TK</td>
-                            <td><span class="badge bg-secondary text-uppercase">{{ $order->payment_method ?? 'N/A' }}</span></td>
+                            <td><span class="badge bg-secondary text-uppercase">{{ $order->payment_method ?? 'N/A' }}</span>
+                            </td>
                             <td><code>{{ $order->transaction_id ?? 'N/A' }}</code></td>
-                            
+
                             {{-- Payment Status Dropdown --}}
                             <td>
-                                <select class="form-control form-control-sm status-change" data-id="{{ $order->id }}" name="payment_status" style="width: 110px;">
-                                    <option value="pending" {{ $order->payment_status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                    <option value="paid" {{ $order->payment_status == 'paid' ? 'selected' : '' }}>Paid</option>
-                                    <option value="failed" {{ $order->payment_status == 'failed' ? 'selected' : '' }}>Failed</option>
+                                <select class="form-control form-control-sm status-change" data-id="{{ $order->id }}"
+                                    name="payment_status" style="width: 130px;">
+
+                                    <option value="pending" {{ $order->payment_status == 'pending' ? 'selected' : '' }}>
+                                        Pending
+                                    </option>
+
+                                    <option value="completed"
+                                        {{ $order->payment_status == 'completed' ? 'selected' : '' }}>
+                                        Completed
+                                    </option>
+
+                                    <option value="failed" {{ $order->payment_status == 'failed' ? 'selected' : '' }}>
+                                        Failed
+                                    </option>
+
+                                    <option value="cancelled"
+                                        {{ $order->payment_status == 'cancelled' ? 'selected' : '' }}>
+                                        Cancelled
+                                    </option>
+
                                 </select>
                             </td>
-
-                            {{-- Order Status Dropdown --}}
                             <td>
-                                <select class="form-control form-control-sm status-change" data-id="{{ $order->id }}" name="order_status" style="width: 110px;">
-                                    <option value="pending" {{ $order->order_status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                    <option value="approved" {{ $order->order_status == 'approved' ? 'selected' : '' }}>Approved</option>
-                                    <option value="rejected" {{ $order->order_status == 'rejected' ? 'selected' : '' }}>Rejected</option>
-                                </select>
+                                {{ $order->order_status }}
                             </td>
                         </tr>
                     @endforeach
@@ -88,7 +100,6 @@
                 let orderId = $(this).data('id');
                 let row = $(this).closest('tr');
                 let payment_status = row.find('select[name="payment_status"]').val();
-                let order_status = row.find('select[name="order_status"]').val();
 
                 $.ajax({
                     url: "{{ url('admin/orders/update-status') }}/" + orderId,
@@ -96,7 +107,6 @@
                     data: {
                         _token: '{{ csrf_token() }}',
                         payment_status: payment_status,
-                        order_status: order_status
                     },
                     success: function(res) {
                         if (res.status === 'success') {
@@ -125,6 +135,7 @@
                         });
                     }
                 });
+                
             });
         });
     </script>

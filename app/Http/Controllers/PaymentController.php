@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PaymentSuccess;
 use App\Models\Course;
 use App\Models\Order;
+use Illuminate\Support\Str;
 use App\Models\PaymentApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +15,7 @@ class PaymentController extends Controller
     private function paymentGateway()
     {
         return PaymentApi::where('provider_slug', 'sandbox')
-            ->where('status', 'active') 
+            ->where('status', 'active')
             ->firstOrFail();
     }
 
@@ -40,6 +41,10 @@ class PaymentController extends Controller
         $apiKey = $paymentGateway->api_key;
         $apiUrl = $paymentGateway->secret_key;
 
+        do {
+            $transactionId = strtoupper(Str::random(10));
+        } while (Order::where('transaction_id', $transactionId)->exists());
+
         try {
             $order = Order::create([
                 'course_id' => $course->id,
@@ -47,6 +52,7 @@ class PaymentController extends Controller
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'course_price' => $course->discount_price,
+                'transaction_id'  => $transactionId,
                 'payment_method' => 'UddoktaPay',
                 'payment_status' => 'pending',
                 'order_status' => 'pending',
@@ -158,11 +164,9 @@ class PaymentController extends Controller
         }
 
         $order->update([
-            'payment_status' => $request->status,
+            'payment_status' => strtolower($request->status),
             'order_status' => 'approved',
             'payment_method' => $request->payment_method,
-            'transaction_id' => $request->transaction_id,
-            'invoice_id' => $request->invoice_id,
         ]);
 
         setMailConfig('payment');

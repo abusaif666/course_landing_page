@@ -21,15 +21,19 @@ class PaymentSuccess extends Mailable
 
     public function envelope(): Envelope
     {
+        $subject = $this->order->payment_status == 'completed'
+            ? 'Payment Successful'
+            : 'Payment Processing';
+
         return new Envelope(
-            subject: 'Payment Successful',
+            subject: $subject,
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'emails.payment-success',
+            view: 'emails.payment-status',
             with: [
                 'order' => $this->order,
             ],
