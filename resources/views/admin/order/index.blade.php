@@ -48,14 +48,14 @@
                 });
             }
 
-            // ২. রিয়েল-টাইম সার্চ (Debounce সহ)
+
             let searchTimer;
             $('#search-input').on('keyup search', function() {
                 clearTimeout(searchTimer);
                 let searchVal = $(this).val();
 
                 searchTimer = setTimeout(function() {
-                    fetchOrders(1, searchVal); // সার্চ করলে সবসময় ১ম পেজ থেকে দেখাবে
+                    fetchOrders(1, searchVal);
                 }, 250);
             });
 
@@ -91,6 +91,11 @@
                                 showConfirmButton: false,
                                 timer: 2000
                             });
+
+                            let currentPage = $('.pagination .active span').text() || 1;
+                            let searchVal = $('#search-input').val();
+
+                            fetchOrders(currentPage, searchVal);
                         }
                     },
                     error: function() {
