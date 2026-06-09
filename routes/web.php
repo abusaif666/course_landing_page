@@ -96,7 +96,7 @@ Route::put('admin/orders/update-status/{id}', [OrderController::class, 'updateSt
     Route::get('/users', [UserController::class, 'index'])->name('user.index');
     Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
     Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
-    Route::post('/user-update/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::put('/user-update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::post('/user-destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

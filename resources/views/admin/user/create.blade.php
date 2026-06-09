@@ -3,88 +3,183 @@
 @section('title', 'Add User')
 
 @section('content')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-    <div class="form-wrapper">
-        <div class="form-header">
-            <div class="form-info">
-                <h3 class="form-title">Add User</h3>
-                <div class="breadcrumb">
-                    <span><a href="{{ route('admin.dashboard') }}">Dashboard</a></span>
-                    <span><i class="fa-solid fa-caret-right"></i></span>
-                    <span>Add User</span>
-                </div>
-            </div>
-            <div>
-                <a href="{{ route('user.index') }}" class="btn-list"><i class="fa-solid fa-list"></i> User List</a>
+
+<div class="form-wrapper">
+
+    <div class="form-header">
+        <div class="form-info">
+            <h3 class="form-title">Add User</h3>
+
+            <div class="breadcrumb">
+                <span>
+                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-caret-right"></i>
+                </span>
+
+                <span>Add User</span>
             </div>
         </div>
 
-        <div class="form-body">
-            <form action="{{ route('user.store') }}" method="POST">
-                @csrf
-                <div class="row g-3">
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name">
-                            <small class="error-text"></small>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email">
-                            <small class="error-text"></small>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number">
-                            <small class="error-text"></small>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Role</label>
-                            <select class="form-control" name="role">
-                                <option value="">Select Role</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Admin">Admin</option>
-                            </select>
-                            <small class="error-text"></small>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Enter Password">
-                            <small class="error-text password_error"></small>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <button type="submit" class="btn-submit">
-                            Submit
-                        </button>
-                    </div>
-
-                </div>
-            </form>
+        <div>
+            <a href="{{ route('user.index') }}" class="btn-list">
+                <i class="fa-solid fa-list"></i>
+                User List
+            </a>
         </div>
     </div>
+
+    <div class="form-body">
+
+        <form action="{{ route('user.store') }}" method="POST">
+            @csrf
+
+            <div class="row g-3">
+
+                {{-- Name --}}
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label>Name</label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control @error('name') is-invalid @enderror"
+                            placeholder="Enter Name"
+                            value="{{ old('name') }}"
+                        >
+
+                        @error('name')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+                </div>
+
+                {{-- Email --}}
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control @error('email') is-invalid @enderror"
+                            placeholder="Enter Email"
+                            value="{{ old('email') }}"
+                        >
+
+                        @error('email')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+                </div>
+
+                {{-- Phone --}}
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="text"
+                            name="phone"
+                            class="form-control @error('phone') is-invalid @enderror"
+                            placeholder="Enter Phone Number"
+                            value="{{ old('phone') }}"
+                        >
+
+                        @error('phone')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+                </div>
+
+                {{-- Role --}}
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label>Role</label>
+
+                        <select
+                            name="role"
+                            class="form-control @error('role') is-invalid @enderror"
+                        >
+                            <option value="">Select Role</option>
+
+                            <option
+                                value="Super Admin"
+                                {{ old('role') == 'Super Admin' ? 'selected' : '' }}
+                            >
+                                Super Admin
+                            </option>
+
+                            <option
+                                value="Admin"
+                                {{ old('role') == 'Admin' ? 'selected' : '' }}
+                            >
+                                Admin
+                            </option>
+
+                        </select>
+
+                        @error('role')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+                </div>
+
+                {{-- Password --}}
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-control @error('password') is-invalid @enderror"
+                            placeholder="Enter Password"
+                        >
+
+                        @error('password')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+                </div>
+
+                {{-- Submit --}}
+                <div class="col-md-12">
+
+                    <button type="submit" class="btn-submit">
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
 @endsection
