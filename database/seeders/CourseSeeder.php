@@ -10,12 +10,12 @@ class CourseSeeder extends Seeder
     public function run()
     {
         Course::create([
-            'title' => 'YouTube Monetization and CPM Course',
-            'description' => 'আমাদের কোর্সে বাংলাদেশ থেকে ইউএস মার্কেট টার্গেট করে AI ব্যবহার করে ইংলিশ কনটেন্ট এর মাধ্যমে চ্যানেল মনিটাইজ এবং হাই RPM (Revenue Per Mille) তোলার সম্পূর্ণ গাইডলাইন স্টেপ বাই স্টেপ দেওয়া হবে।',
+            'title' => 'USA YouTube Shorts Masterclass ! কোর্সটির কাজ চলমান দয়া করে কেউ এডমিশন নিবেন না',
+            'description' => 'বর্তমান সময়ে ইউটিউব শর্টস হলো অর্গানিক রিচ ও দ্রুত আয়ের সেরা মাধ্যম। এই কোর্সে শেখানো হবে কিভাবে বাংলাদেশ থেকে সঠিক নিয়মে USA মার্কেট টার্গেট করে প্রফেশনাল মানের শর্টস চ্যানেল তৈরি করবেন। কপিরাইট বা জটিলতা ছাড়াই স্মার্ট অটোমেশন ব্যবহার করে সাস্টেইনেবল প্যাসিভ ইনকাম তৈরির প্রমাণিত স্টেপ-বাই-স্টেপ গাইড।',
             'thumbnail' => 'default.png',
             'video' => 'yb5ps_gkVlM',
-            'price' => 1600,
-            'discount_price' => 1500,
+            'price' => 2999,
+            'discount_price' => 1250,
             'type' => 1,
             'status' => 1,
             'whatsapp' => 'www.whatsapp.com',

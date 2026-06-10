@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
             GeneralSettingSeeder::class,
             SmtpSeeder::class,
             BenefitSeeder::class,
+            OutlineSeeder::class,
+            FaqSeeder::class,
+            TestimonualSeeder::class,
         ]);
     }
 }

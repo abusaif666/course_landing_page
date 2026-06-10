@@ -2,20 +2,31 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Course;
 use App\Models\Outline;
 use Illuminate\Database\Seeder;
 
 class OutlineSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        //
+        $outlines = [
+            'Professional USA Channel Setup & Branding',
+            'Viral Topic & Winning Niche Selection',
+            'Advanced Viral Scripting & Hook Engineering',
+            'High-Retention Shorts Editing Masterclass',
+            'Copyright Management & Fair Use Secrets',
+            'Monetize Shorts - Ads, Affiliate & Other Income',
+            'Smart Automation & Bulk Production System',
+            'FINAL MASTERCLASS: Income Roadmap & Endless Opertunity',
+        ];
+
+        $courseId = 1;
+
+        foreach ($outlines as $outline) {
+            Outline::create([
+                'course_id' => $courseId,
+                'outline' => $outline,
+            ]);
+        }
     }
 }
