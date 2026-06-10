@@ -11,7 +11,6 @@ class BenefitController extends Controller
 {
     public function index()
     {
-        // Eager loading (with) ব্যবহার করে কুয়েরি অপ্টিমাইজ করা হয়েছে
         $benefits = Benefits::with('course')->paginate(10);
         return view('admin.benefit.index', compact('benefits'));
     }
