@@ -58,10 +58,12 @@
                     <div class="bottom_area">
                         <div class="button_or_total_seat_area">
                             <div class="button_area">
-                                <a class="registation_btn register_btn" href="javascript:void(0)">রেজিস্ট্রেশন করুন এখনই</a>
+                                <a class="registation_btn register_btn" href="javascript:void(0)">রেজিস্ট্রেশন করুন
+                                    এখনই</a>
                                 <img class="arrow_image" src="assets/img/arrow.png" alt="">
                             </div>
-                            <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
+                            <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span>
+                            </div>
                         </div>
                     </div>
 
@@ -168,6 +170,44 @@
         </div>
     </div>
 
+    <div class="lp_box">
+            <div class="lp-wrapper">
+        <div class="lp-box">
+
+            <div class="lp-badge">
+                🎁 যারা join করবেন তাদের জন্য special gift
+            </div>
+
+            <h1 class="lp-title">
+                ৮০,০০০ টাকার <span>Ecom Dropshipping Mastery Course</span> — সম্পূর্ণ FREE করার সুযোগ
+            </h1>
+
+            <div class="lp-price">
+                <del>৮০,০০০</del>
+                <div class="lp-free">FREE</div>
+            </div>
+
+            <div class="lp-info">
+                এই master class-এ যারা join করবেন, তারা আমার ৮০,০০০ টাকার Ecom Dropshipping Mastery Course টি free তে
+                করার সুযোগ পাবেন।
+                <br><br>
+                মার্কেটপ্লেস এই বিষয়ে বিস্তারিত আলোচনা করা হবে।
+            </div>
+
+            <div class="lp-small">
+                এই কোর্সে আপনি Facebook Ads, Google Ads, niche selection, scaling strategy সব কিছু শিখতে পারবেন।
+            </div>
+
+            <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
+
+            <div class="lp-seats">
+                ● বাকি আছে মাত্র {{ en_to_bn($course->total_seat) }} টা seat
+            </div>
+
+        </div>
+    </div>
+    </div>
+
 
     @if ($benefits->count() > 0)
         <div class="who_join_this_class">
@@ -219,7 +259,8 @@
                                         class="fa-solid fa-arrow-right"></i></span>
                             </a>
                         </div>
-                        <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
+                        <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span>
+                        </div>
                     </div>
                 </div>
             </div>
