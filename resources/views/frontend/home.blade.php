@@ -171,23 +171,22 @@
     </div>
 
     <div class="lp_box">
-            <div class="lp-wrapper">
-        <div class="lp-box">
+        <div class="lp-wrapper">
+            <div class="lp-box">
 
-            <div class="lp-badge">
-                🎁 যারা join করবেন তাদের জন্য special gift
-            </div>
+                <div class="lp-badge">
+                    🎁 যারা join করবেন তাদের জন্য special gift
+                </div>
 
-            <h1 class="lp-title">
-                ৮০,০০০ টাকার <span>Ecom Dropshipping Mastery Course</span> — সম্পূর্ণ FREE করার সুযোগ
-            </h1>
+                <h1 class="lp-title">২০০০ টাকা মূল্যের ‘THE PROJECT 30K’ (৩০,০০০+ ভিডিও) বান্ডিলটি আজ কোর্সের সাথে
+                    পাচ্ছেন একদম ফ্রি!</h1>
 
-            <div class="lp-price">
-                <del>৮০,০০০</del>
-                <div class="lp-free">FREE</div>
-            </div>
+                <div class="lp-price">
+                    <del> {{ en_to_bn('2,000') }} </del>
+                    <div class="lp-free">FREE</div>
+                </div>
 
-            <div class="lp-info">
+                {{-- <div class="lp-info">
                 এই master class-এ যারা join করবেন, তারা আমার ৮০,০০০ টাকার Ecom Dropshipping Mastery Course টি free তে
                 করার সুযোগ পাবেন।
                 <br><br>
@@ -196,16 +195,16 @@
 
             <div class="lp-small">
                 এই কোর্সে আপনি Facebook Ads, Google Ads, niche selection, scaling strategy সব কিছু শিখতে পারবেন।
+            </div> --}}
+
+                <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
+
+                <div class="lp-seats">
+                    ● বাকি আছে মাত্র {{ en_to_bn($course->total_seat) }} টা seat
+                </div>
+
             </div>
-
-            <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
-
-            <div class="lp-seats">
-                ● বাকি আছে মাত্র {{ en_to_bn($course->total_seat) }} টা seat
-            </div>
-
         </div>
-    </div>
     </div>
 
 
