@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
@@ -28,7 +29,7 @@
                     </div>
                     <div class="header_right">
                         <div class="button_area">
-                            <a href="#checkout_form" class="register_btn">রেজিস্ট্রেশন করুন এখনই</a>
+                            <a href="javascript:void(0)" class="register_btn ">রেজিস্ট্রেশন করুন এখনই</a>
                         </div>
                     </div>
                 </div>
@@ -57,10 +58,10 @@
                     <div class="bottom_area">
                         <div class="button_or_total_seat_area">
                             <div class="button_area">
-                                <a class="registation_btn" href="#checkout_form">রেজিস্ট্রেশন করুন এখনই</a>
+                                <a class="registation_btn register_btn" href="javascript:void(0)">রেজিস্ট্রেশন করুন এখনই</a>
                                 <img class="arrow_image" src="assets/img/arrow.png" alt="">
                             </div>
-                            <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                            <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
                         </div>
                     </div>
 
@@ -70,7 +71,7 @@
     </div>
 
 
-    <div class="seat_book">
+    {{-- <div class="seat_book">
         <div class="container">
             <div class="seat_book_wrapper">
                 <div class="top_area">
@@ -113,25 +114,24 @@
                     </div>
                     <div>
                         <div class="button_area">
-                            <a class="reg_btn" href="#checkout_form">
+                            <a class="reg_btn register_btn" href="javascript:void(0)">
                                 <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
                                 <span> {{ en_to_bn($course->discount_price ?? '') }} টাকা <i
                                         class="fa-solid fa-arrow-right"></i></span>
                             </a>
                         </div>
-                        <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                        <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div> --}}
+
+
+    <div id="countdown-data" data-created="{{ $course->created_at->timestamp }}"
+        data-start="{{ $course->offer_start ? strtotime($course->offer_start) : '' }}"
+        data-end="{{ $course->offer_end ? strtotime($course->offer_end) : '' }}">
     </div>
-
-
-<div id="countdown-data"
-    data-created="{{ $course->created_at->timestamp }}"
-    data-start="{{ $course->offer_start ? strtotime($course->offer_start) : '' }}"
-    data-end="{{ $course->offer_end ? strtotime($course->offer_end) : '' }}">
-</div>
 
 
     <div class="countdown_section">
@@ -164,40 +164,9 @@
                 </div>
             </div>
 
-            <button class="btn_offer">এখনই এনরোল করুন</button>
+            <button class="btn_offer register_btn">এখনই এনরোল করুন</button>
         </div>
     </div>
-
-    <div class="countdown_bar">
-        <div class="text">
-            কোর্স আজকে জয়েন হলে পাবেন <span>{{ en_to_bn($course->price - $course->discount_price) }} টাকা ছাড়!</span>
-        </div>
-
-        <div class="timer">
-
-            <div class="box">
-                <span class="days">00</span>
-                <small>দিন</small>
-            </div>
-
-            <div class="box">
-                <span class="hours">00</span>
-                <small>ঘন্টা</small>
-            </div>
-
-            <div class="box">
-                <span class="minutes">00</span>
-                <small>মিনিট</small>
-            </div>
-
-            <div class="box">
-                <span class="seconds">00</span>
-                <small>সেকেন্ড</small>
-            </div>
-        </div>
-    </div>
-
-
 
 
     @if ($benefits->count() > 0)
@@ -226,7 +195,7 @@
             <div class="container">
                 <div class="learn_this_course_wrapper">
                     <div class="title_area">
-                        <div class="title">এই সেশনে আপনি শিখবেন</div>
+                        <div class="title">এই কোর্সে আপনি যা শিখবেন</div>
                     </div>
                     <div class="learn_this_course_boxex">
                         <div class="box">
@@ -244,13 +213,13 @@
                     </div>
                     <div class="bottom_area">
                         <div class="button_area">
-                            <a class="reg_btn" href="#checkout_form">
+                            <a class="reg_btn register_btn" href="javascript:void(0)">
                                 <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
                                 <span> {{ en_to_bn($course->discount_price ?? '') }} টাকা <i
                                         class="fa-solid fa-arrow-right"></i></span>
                             </a>
                         </div>
-                        <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                        <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
                     </div>
                 </div>
             </div>
@@ -333,20 +302,47 @@
                 </div>
                 <div class="accordian_bottom_area">
                     <div class="button_area">
-                        <a class="reg_btn" href="#checkout_form">
+                        <a class="reg_btn register_btn" href="javascript:void(0)">
                             <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
                             <span> {{ en_to_bn($course->discount_price ?? '') }} টাকা <i
                                     class="fa-solid fa-arrow-right"></i></span>
                         </a>
                     </div>
-                    <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                    <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
                 </div>
             </div>
         </div>
     @endif
 
 
+    <div class="countdown_bar">
+        <div class="text">
+            কোর্স আজকে জয়েন হলে পাবেন <span>{{ en_to_bn($course->price - $course->discount_price) }} টাকা ছাড়!</span>
+        </div>
 
+        <div class="timer">
+
+            <div class="box">
+                <span class="days">00</span>
+                <small>দিন</small>
+            </div>
+
+            <div class="box">
+                <span class="hours">00</span>
+                <small>ঘন্টা</small>
+            </div>
+
+            <div class="box">
+                <span class="minutes">00</span>
+                <small>মিনিট</small>
+            </div>
+
+            <div class="box">
+                <span class="seconds">00</span>
+                <small>সেকেন্ড</small>
+            </div>
+        </div>
+    </div>
 
 
     <div class="checkout">
@@ -405,7 +401,7 @@
                             আপনার তথ্য দিন
                         </h3>
 
-                        <form id="checkout_form" class="user_details_form" data-course-id="{{ $course->id }}">
+                        <form class="user_details_form" id="checkout_form" data-course-id="{{ $course->id }}">
 
                             <div class="form_controll_wrapper">
                                 <label for="name">আপনার নাম</label>
@@ -466,8 +462,6 @@
             </div>
         </div>
     </footer>
-
-
 
 
 </body>
@@ -575,6 +569,7 @@
             e.preventDefault();
 
             let url = `{{ route('payment.initiate', $course->id) }}`
+
 
             let isNameValid = validateName();
             let isEmailValid = validateEmail();

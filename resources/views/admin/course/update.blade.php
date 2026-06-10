@@ -314,8 +314,34 @@
 
 
                 
+                {{-- Total Start --}}
+                <div class="col-md-4">
+
+                    <div class="form-group">
+
+                        <label>Total Seat</label>
+
+                        <input
+                            type="text"
+                            name="total_seat"
+                            class="form-control @error('total_seat') is-invalid @enderror"
+                            value="{{ old('total_seat', $course->total_seat) }}"
+                            placeholder="Total Seat"
+                        >
+
+                        @error('total_seat')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+
+                </div>
+
+                
                 {{-- Offer Start --}}
-                <div class="col-md-6">
+                <div class="col-md-4">
 
                     <div class="form-group">
 
@@ -339,7 +365,7 @@
                 </div>
 
                 {{-- Offer End --}}
-                <div class="col-md-6">
+                <div class="col-md-4">
 
                     <div class="form-group">
 

@@ -15,17 +15,16 @@ class OrderController extends Controller
     {
         $query = Order::with('course')->latest();
 
-        // সার্চ কুয়েরি থাকলে ফিল্টার করা হবে
-        if ($request->has('search') && !empty($request->search)) {
+        if ($request->has('search') && ! empty($request->search)) {
             $search = $request->search;
-            $query->where(function($q) use ($search) {
+            $query->where(function ($q) use ($search) {
                 $q->where('transaction_id', 'LIKE', "%{$search}%")
-                  ->orWhere('name', 'LIKE', "%{$search}%")
-                  ->orWhere('phone', 'LIKE', "%{$search}%")
-                  ->orWhere('email', 'LIKE', "%{$search}%")
-                  ->orWhereHas('course', function($c) use ($search) {
-                      $c->where('title', 'LIKE', "%{$search}%");
-                  });
+                    ->orWhere('name', 'LIKE', "%{$search}%")
+                    ->orWhere('phone', 'LIKE', "%{$search}%")
+                    ->orWhere('email', 'LIKE', "%{$search}%")
+                    ->orWhereHas('course', function ($c) use ($search) {
+                        $c->where('title', 'LIKE', "%{$search}%");
+                    });
             });
         }
 
@@ -48,21 +47,53 @@ class OrderController extends Controller
         ]);
 
         try {
+
+            // old status
+            $oldStatus = $order->payment_status;
+
+            // update order
             $order->update([
                 'payment_status' => $request->payment_status,
                 'payment_method' => 'Unknown',
             ]);
 
+            // =========================================
+            // SEAT MINUS
+            // =========================================
+
+            // only first time completed/confirmed
+            if (
+                ! in_array($oldStatus, ['completed', 'confirmed']) &&
+                in_array(strtolower($request->payment_status), ['completed', 'confirmed'])
+            ) {
+
+                $course = $order->course;
+
+                if ($course && $course->total_seat > 0) {
+
+                    $course->decrement('total_seat');
+                }
+            }
+
+            // =========================================
+            // SEND MAIL
+            // =========================================
+
             setMailConfig('payment');
+
             if ($order->email) {
-                Mail::to($order->email)->send(new PaymentSuccess($order));
+
+                Mail::to($order->email)
+                    ->send(new PaymentSuccess($order));
             }
 
             return response()->json([
                 'status' => 'success',
                 'message' => 'Order status updated successfully!',
             ]);
+
         } catch (\Exception $e) {
+
             return response()->json([
                 'status' => 'error',
                 'message' => 'Something went wrong!',

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('status')->default(1);
             $table->date('offer_start')->nullable();
             $table->date('offer_end')->nullable();
+            $table->integer('total_seat')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('drive')->nullable();
             $table->timestamps();

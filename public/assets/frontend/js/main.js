@@ -287,6 +287,14 @@ let offerEnd = el.attr("data-end")
 startSmartCountdown(createdAt, offerStart, offerEnd);
 
 
+$(document).on('click', '.register_btn', function(e) {
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $('#checkout_form').offset().top
+    });
+});
+
 
 
 

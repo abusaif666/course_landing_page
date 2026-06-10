@@ -62,6 +62,7 @@ class CourseController extends Controller
                 'status' => $request->status,
                 'offer_start' => $request->offer_start,
                 'offer_end' => $request->offer_end,
+                'total_seat' => $request->total_seat,
                 'whatsapp' => $request->whatsapp,
                 'drive' => $request->drive,
             ]);
@@ -135,6 +136,7 @@ class CourseController extends Controller
                 'status' => $request->status,
                 'offer_start' => $request->offer_start,
                 'offer_end' => $request->offer_end,
+                'total_seat' => $request->total_seat,
                 'whatsapp' => $request->whatsapp,
                 'drive' => $request->drive,
             ]);

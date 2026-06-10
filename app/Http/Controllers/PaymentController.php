@@ -167,6 +167,12 @@ class PaymentController extends Controller
             'payment_method' => $request->payment_method,
         ]);
 
+        $course = $order->course;
+         
+        if ($course && $course->total_seat > 0){ 
+            $course->decrement('total_seat'); 
+        }
+
         setMailConfig('payment');
         Mail::to($request->email)->send(new PaymentSuccess($order));
 

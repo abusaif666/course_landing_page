@@ -1079,7 +1079,7 @@ hr {
     display: flex;
     justify-content: center;
     padding: 60px 15px;
-    background: #f5f7fb;
+    background: #080B14;
 }
 
 .countdown_card {
@@ -1088,7 +1088,8 @@ hr {
     text-align: center;
     padding: 50px 30px;
     border-radius: 18px;
-    background: linear-gradient(135deg, #020024, #001b6e, #003cff);
+    /* background: linear-gradient(135deg, #020024, #001b6e, #003cff); */
+    background-color: #151515;
     color: #fff;
     box-shadow: 0 20px 60px rgba(0,0,0,0.25);
 }

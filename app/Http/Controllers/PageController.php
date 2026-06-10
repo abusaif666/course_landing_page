@@ -29,9 +29,4 @@ class PageController extends Controller
     }
 
 
-    public function checkoutPage($slug)
-    {
-        $course = Course::where('slug',$slug)->firstOrFail();
-        return view('frontend.checkout', compact('course'));
-    }
 }
