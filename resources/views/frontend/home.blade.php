@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}">
 </head>
-
 <body>
 
     <div class="landing_page_top">
@@ -72,7 +70,6 @@
         </div>
     </div>
 
-
     {{-- <div class="seat_book">
         <div class="container">
             <div class="seat_book_wrapper">
@@ -129,12 +126,10 @@
         </div>
     </div> --}}
 
-
     <div id="countdown-data" data-created="{{ $course->created_at->timestamp }}"
         data-start="{{ $course->offer_start ? strtotime($course->offer_start) : '' }}"
         data-end="{{ $course->offer_end ? strtotime($course->offer_end) : '' }}">
     </div>
-
 
     <div class="countdown_section">
         <div class="countdown_card">
@@ -207,7 +202,6 @@
         </div>
     </div>
 
-
     @if ($benefits->count() > 0)
         <div class="who_join_this_class">
             <div class="container">
@@ -227,7 +221,6 @@
             </div>
         </div>
     @endif
-
 
     @if ($outlines->count() > 0)
         <div class="learn_this_course">
@@ -266,7 +259,6 @@
         </div>
     @endif
 
-
     @if ($testimonial->count() > 0)
         <div class="video_slider_wrapper">
             <div class="container">
@@ -296,7 +288,6 @@
         </div>
     @endif
 
-
     @if ($result->count() > 0)
         <div class="image_slider_wrapper">
             <div class="container">
@@ -320,7 +311,6 @@
             </div>
         </div>
     @endif
-
 
     @if ($faqs->count() > 0)
         <div class="accordian">
@@ -354,7 +344,6 @@
         </div>
     @endif
 
-
     <div class="countdown_bar">
         <div class="text">
             কোর্স আজকে জয়েন হলে পাবেন <span>{{ en_to_bn($course->price - $course->discount_price) }} টাকা ছাড়!</span>
@@ -383,7 +372,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="checkout">
 
@@ -603,7 +591,6 @@
             validatePhone();
         });
 
-
         // Final Form Submit with AJAX
         $('.user_details_form').submit(function(e) {
             e.preventDefault();
@@ -667,5 +654,4 @@
         });
     });
 </script>
-
 </html>
