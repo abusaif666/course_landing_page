@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('discount_price')->nullable();
             $table->boolean('type');
             $table->boolean('status')->default(1);
+            $table->date('offer_start')->nullable();
+            $table->date('offer_end')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('drive')->nullable();
             $table->timestamps();

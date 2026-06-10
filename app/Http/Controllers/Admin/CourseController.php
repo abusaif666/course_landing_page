@@ -60,6 +60,8 @@ class CourseController extends Controller
                 'discount_price' => $request->discount_price ?? 0,
                 'type' => $request->type,
                 'status' => $request->status,
+                'offer_start' => $request->offer_start,
+                'offer_end' => $request->offer_end,
                 'whatsapp' => $request->whatsapp,
                 'drive' => $request->drive,
             ]);
@@ -131,6 +133,8 @@ class CourseController extends Controller
                 'discount_price' => $request->discount_price ?? 0,
                 'type' => $request->type,
                 'status' => $request->status,
+                'offer_start' => $request->offer_start,
+                'offer_end' => $request->offer_end,
                 'whatsapp' => $request->whatsapp,
                 'drive' => $request->drive,
             ]);

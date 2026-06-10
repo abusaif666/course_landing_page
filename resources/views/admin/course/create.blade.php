@@ -311,6 +311,54 @@
 
                 </div>
 
+                {{-- Offer Start --}}
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Offer Start</label>
+
+                        <input
+                            type="date"
+                            name="offer_start"
+                            class="form-control @error('offer_start') is-invalid @enderror"
+                            value="{{ old('offer_start') }}"
+                        >
+
+                        @error('offer_start')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+
+                </div>
+
+                {{-- Offer End --}}
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Offer End</label>
+
+                        <input
+                            type="date"
+                            name="offer_end"
+                            class="form-control @error('offer_end') is-invalid @enderror"
+                            value="{{ old('offer_end') }}"
+                        >
+
+                        @error('offer_end')
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
+                        @enderror
+
+                    </div>
+
+                </div>
+
                 {{-- Thumbnail --}}
                 <div class="col-md-4">
 
