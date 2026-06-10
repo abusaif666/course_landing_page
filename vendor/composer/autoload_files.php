@@ -34,4 +34,5 @@ return array(
     'ec07570ca5a812141189b1fa81503674' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     '320163ac6b93aebe3dc25b60a0533d56' => $vendorDir . '/spatie/laravel-ignition/src/helpers.php',
     '929f5d14172cfb00666e47ae2bd11edc' => $baseDir . '/app/Helpers/MailHelper.php',
+    '73e3817c11a74d3b321f1667c2bf1e8c' => $baseDir . '/app/Helpers/number_helper.php',
 );

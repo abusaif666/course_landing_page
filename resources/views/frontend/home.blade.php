@@ -1,69 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/frontend/css/slick.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/slick.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}">
 </head>
+
 <body>
 
 
-  <div>
-    <!-- Course Details -->
-    <div class="course_details">
-        <div class="container">
-            <div class="course_title">{{ $course->title }}</div>
-            <div class="course_description">{{ $course->description }}</div>
-        </div>
-    </div>
 
-    <!-- Top Video -->
-    <div class="top_video">
-        <div class="container">
-            <div class="top_video_wrapper">
-                <iframe src="https://www.youtube.com/embed/{{ $course->video }}?autoplay=0&mute=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="landing_page_top">
+        <header class="site_header">
+            <div class="container">
+                <div class="site_header_wrapper">
+                    <div class="header_left">
+                        <div class="logo_area">
+                            <a href="">
+                                <img src="assets/img/logo.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header_right">
+                        <div class="button_area">
+                            <a href="" class="register_btn">রেজিস্ট্রেশন করুন এখনই</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="landing_page_video_area">
+            <div class="container">
+                <div class="landing_page_video_area_wrapper">
+                    <div class="top_area">
+                        <div class="landing_page_video_content">
+                            <h2> {{ $course->title ?? '' }} </h2>
+                            <p> {{ $course->description ?? ''  }} </p>
+                        </div>
+                    </div>
+                    <div class="center_area">
+                        <div class="video_player_wrapper">
+                            <video class="video player" playsinline controls>
+                                <source src="assets/video/1475633_People_Family_1280x720.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <div class="bottom_area">
+                        <div class="button_or_total_seat_area">
+                            <div class="button_area">
+                                <a class="registation_btn" href="">রেজিস্ট্রেশন করুন এখনই</a>
+                                <img class="arrow_image" src="assets/img/arrow.png" alt="">
+                            </div>
+                            <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 
 
-    <!-- Offer Area -->
-    <div class="offer_area">
+    <div class="seat_book">
         <div class="container">
-            <div class="offer_wrapper">
-                <div class="offer_box">
-                    <div class="regular_price">রেগুলার প্রাইস <span>{{ $course->price }}/-</span></div>
-                    <div class="offer_price">অফার প্রাইস <span>{{ $course->discount_price }}/-</span></div>
-                    <div class="title">অফারটি চলবেঃ</div>
-                    <div class="offer_count_box" data-created-at="{{ $course->created_at }}">
-                        <div class="count_box">
-                            <div class="number">00</div>
-                            <div class="text">Days</div>
+            <div class="seat_book_wrapper">
+                <div class="top_area">
+                    <div class="title">এখনই সিট বুক করুন</div>
+                </div>
+                <div class="center_area">
+                    <div class="seat_book_box">
+                        <div class="box">
+                            <div class="icon_area">
+                                <div class="icon"><i class="fa fa-home"></i></div>
+                            </div>
+                            <div class="content_area">
+                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
+                            </div>
                         </div>
-                        <div class="count_box">
-                            <div class="number">00</div>
-                            <div class="text">Hours</div>
+                        <div class="box">
+                            <div class="icon_area">
+                                <div class="icon"><i class="fa fa-home"></i></div>
+                            </div>
+                            <div class="content_area">
+                                <p>সময়</p>
+                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
+                            </div>
                         </div>
-                        <div class="count_box">
-                            <div class="number">00</div>
-                            <div class="text">Minutes</div>
-                        </div>
-                        <div class="count_box">
-                            <div class="number">00</div>
-                            <div class="text">Seconds</div>
+                        <div class="footer_box">
+                            <div class="icon_area">
+                                <div class="icon"><i class="fa-solid fa-circle"></i></div>
+                            </div>
+                            <div class="content_area">
+                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
+                                <h4> {{ en_to_bn($course->discount_price ?? '') }}  টাকা</h4>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="mt-2">
-                        {{-- <a class="whatsapp_btn" href="#enrollNowArea"> Enroll Now</a> --}}
-                        <a class="whatsapp_btn" href="{{ route('checkout.page',$course->slug) }}"> Enroll Now</a>
+                </div>
+                <div class="bottom_area">
+                    <div class="content">
+                        <div class="left">পরবর্তী সিট</div>
+                        <div class="right">১০০০ টাকা</div>
+                    </div>
+                    <div>
+                        <div class="button_area">
+                            <a class="reg_btn" href="">
+                                <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
+                                <span> {{ en_to_bn($course->discount_price ?? '') }}  টাকা <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                        <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
                     </div>
                 </div>
             </div>
@@ -71,20 +125,20 @@
     </div>
 
 
-    <!-- Why Take Course -->
     @if ($benefits->count() > 0)
-        <div class="why_take_course">
+        <div class="who_join_this_class">
             <div class="container">
-                <div class="why_take_course_wrapper">
+                <div class="who_join_class_wrapper">
                     <div class="title">কোর্সটা কেন করবেন ?</div>
-                    <div class="why_take_course_content">
-                        <div class="row">
-                            @foreach ($benefits as $item)
-                                <div class="col-md-6 col-lg-4 mb-4">
-                                    <div class="box">{{ $item->benefit }}</div>
+                    <div class="who_join_class_box">
+                        @foreach ($benefits as $benefit)
+                            <div class="box">
+                                <div class="box_icon"><i class="fa fa-check"></i></div>
+                                <div class="box_content">
+                                    {{ $benefit->benefit ?? '' }}
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -92,229 +146,173 @@
     @endif
 
 
-    <!-- Course Outline -->
-    @if ($outlines->count() > 0)
-        <div class="course_outline">
-            <div class="container">
-                <div class="course_outline_wrapper">
-                    <div class="title">নতুন কোর্স <span>আউটলাইন</span></div>
-                    <div class="subtitle">এক নজরে দেখে নিই কি কি থাকছে এই কোর্সে</div>
-                    <div class="course_outline_list">
-                        <ul>
-                            @foreach ($outlines as $outline)
-                                <li><i class="fa-solid fa-circle-check"></i>{{ $outline->outline }}</li>
-                            @endforeach
 
+    <div class="learn_this_course">
+        <div class="container">
+            <div class="learn_this_course_wrapper">
+                <div class="title_area">
+                    <div class="title">এই সেশনে আপনি শিখবেন</div>
+                </div>
+                <div class="learn_this_course_boxex">
+                    <div class="box box_one">
+                        <div class="header">বিজনেস মডেল ও প্রোডাক্ট রিসার্চ</div>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box box_two">
+                        <div class="header">বিজনেস মডেল ও প্রোডাক্ট রিসার্চ</div>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box box_three">
+                        <div class="header">বিজনেস মডেল ও প্রোডাক্ট রিসার্চ</div>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </div>
+                                <p>ব্র্যান্ড বানাবেন নাকি উইনিং প্রোডাক্ট</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    @endif
 
-    @if ($testimonial->count() > 0)
-        <div class="video_slider_wrapper">
-            <div class="container">
-                <div class="videos_wrapper">
-                    <div class="slider_header">
-                        <div class="title">স্টুডেন্ট <span>রিভিউ ক্লাস</span></div>
-                        <div class="video_slider_arrows">
-                            <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
-                            <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
-                        </div>
+                <div class="bottom_area">
+                    <div class="button_area">
+                        <a class="reg_btn" href="">
+                            <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
+                            <span> {{ en_to_bn($course->discount_price ?? '') }}  টাকা <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
                     </div>
-
-                    <div class="video_items">
-                        @foreach ($testimonial as $video)
-                            <div class="slide">
-                                <div class="video_box">
-                                    <iframe src="https://www.youtube.com/embed/{{ $video->video }}"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+                    <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
                 </div>
             </div>
         </div>
-    @endif
+    </div>
 
-    @if ($result->count() > 0)
-        <div class="image_slider_wrapper">
-            <div class="container">
-                <div class="slider_header">
-                    <div class="title">স্টুডেন্ট রেজাল্ট</div>
-                    <div class="image_slider_arrows">
-                        <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                <div class="image_slider_wrapper">
-                    <div class="slick-image-slider">
-                        @foreach ($result as $data)
-                            <div class="slide">
-                                <img src="{{ asset('storage/student_result/' . $data->photo) }}" width="80">
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-
-    <!-- FAQs -->
     @if ($faqs->count() > 0)
-        <div class="accordion">
+        <div class="accordian">
             <div class="container">
-                <div id="question_answer_accordion" class="accordion_wrapper">
-                    <div class="title">আপনার <span>প্রশ্নের উত্তর</span></div>
-
+                <div class="faq-section">
+                    <h2 class="faq-title">কিছু সাধারণ প্রশ্নের উত্তর</h2>
                     @foreach ($faqs as $faq)
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <h3>{{ $faq->question }}</h3>
-                                <span class="icon">+</span>
+                        <div class="faq-item active">
+                            <div class="faq-question">
+                                লাইভ ক্লাস কিভাবে যুক্ত হবে?
+                                <span class="accordian_icon"></span>
                             </div>
-                            <div class="accordion-body">
-                                <span class="arrow">➔</span> {{ $faq->answer }}
+                            <div class="faq-answer">
+                                আপনি পেমেন্ট করার পর আপনাকে আমাদের একটি প্রাইভেট গ্রুপে যুক্ত করা
+                                হবে, এবং যেদিন লাইভ ক্লাস হবে সেদিন আপনাকে জুমের লিংক শেয়ার করা হবে।
                             </div>
                         </div>
                     @endforeach
                 </div>
+                <div class="accordian_bottom_area">
+                    <div class="button_area">
+                        <a class="reg_btn" href="">
+                            <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
+                            <span> {{ en_to_bn($course->discount_price ?? '') }}  টাকা <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="total_seat">আর মাত্র <span>৩৭ সিট বাকি</span></div>
+                </div>
             </div>
         </div>
     @endif
 
-    {{-- <div class="course_join">
+
+
+    <footer class="footer">
         <div class="container">
-            <div class="course_join_wrapper">
-                <div class="title">কোর্স আজকে জয়েন হলে পাবেন {{ $course->price - $course->discount_price }} টাকা ছাড়!
+            <div class="footer_wrapper">
+                <div class="left">
+                    <p>© 2025 | Business Academy | All rights reserved.</p>
                 </div>
-                <div class="course_join_count_box offer_count_box" data-created-at="{{ $course->created_at }}">
-                    <div class="count_box">
-                        <div class="number"></div>
-                        <div class="text">Days</div>
-                    </div>
-                    <div class="count_box">
-                        <div class="number"></div>
-                        <div class="text">Hours</div>
-                    </div>
-                    <div class="count_box">
-                        <div class="number"></div>
-                        <div class="text">Minutes</div>
-                    </div>
-                    <div class="count_box">
-                        <div class="number"></div>
-                        <div class="text">Seconds</div>
-                    </div>
+                <div class="right">
+                    <ul class="social">
+                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div> --}}
-
-    {{-- <div class="enrol_form_wrapper" id="enrollNowArea">
-        <div class="container ">
-            <div class="enroll_form_title">নিচের ফর্মটি পুরন করে এখনি এনরোল করুন</div>
-            <form id="enrollForm" action="{{ route('payment.initiate',$course->id) }}" method="POST">
-                @csrf
-
-                <div class="row wrapper">
-                    <div class="preloader_enroll">
-                        <div class="preloader_wrapper">
-                            <span class="loader"></span>
-                        </div>
-                    </div>
-
-                    <!-- Billing Details -->
-                    <div class="col-md-6">
-                        <div class="form_area">
-                            <div class="form_header">
-                                <div class="title">Billing Details</div>
-                            </div>
-                            <div class="form_body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form_controll">
-                                            <label>সম্পূর্ন নাম</label>
-                                            <input type="text" name="name" value="" placeholder="সম্পূর্ন নাম">
-                                            <small class="error-message text-danger"></small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form_controll">
-                                            <label>আপনার ইমেইল</label>
-                                            <input type="email" name="email" value="" placeholder="আপনার ইমেইল">
-                                            <small class="error-message text-danger"></small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form_controll">
-                                            <label>আপনার (WhatsApp) নাম্বার</label>
-                                            <input type="text" name="phone" value="" placeholder="আপনার (WhatsApp) নাম্বার">
-                                            <small class="error-message text-danger"></small>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Order Details -->
-                    <div class="col-md-6">
-                        <div class="enroll_area">
-                            <div class="details_table_header">
-                                <div class="title">Your Order</div>
-                            </div>
-                            <div class="details_table_body">
-                                <table class="enrol_table">
-                                    <thead>
-                                        <tr>
-                                            <th>Products</th>
-                                            <th class="text-right">Subtotal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{{ $course->title }} x 1</td>
-                                            <td class="text-right">{{ $course->discount_price }}৳</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Subtotal</td>
-                                            <td class="text-right">{{ $course->discount_price }}৳</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Total</b></td>
-                                            <td class="text-right"><b>{{ $course->discount_price }}৳</b></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="enroll_table_payment_method_box">
-                                    <div class="title">পেমেন্ট করুন</div>
-                                    <div class="payment_method">বিকাশ, নগদ, রকেট, ব্যাংক</div>
-                                </div>
-                            </div>
-                            <div class="table_footer mt-3">
-                                <button type="submit" class="enroll_btn">
-                                    <i class="fa-solid fa-lock"></i> Enroll Now {{ $course->discount_price }}৳
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div> --}}
+    </footer>
 
 
-</div>
+
+
 </body>
 <script src="{{ asset('assets/frontend/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+
 </html>
