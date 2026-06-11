@@ -134,7 +134,8 @@
     </div>
 
     <div class="countdown_section">
-        <div class="countdown_card">
+        <div class="container">
+            <div class="countdown_card">
             <h2 class="title">রেগুলার প্রাইস <del>{{ en_to_bn($course->price ?? '') }}/-</del></h2>
             <h1 class="price">অফার প্রাইস {{ en_to_bn($course->discount_price ?? '') }}/-</h1>
 
@@ -165,10 +166,12 @@
 
             <button class="btn_offer register_btn">এখনই এনরোল করুন</button>
         </div>
+        </div>
     </div>
 
     <div class="lp_box">
-        <div class="lp-wrapper">
+        <div class="container">
+                    <div class="lp-wrapper">
             <div class="lp-box">
 
                 <div class="lp-badge">
@@ -201,6 +204,7 @@
                 </div>
 
             </div>
+        </div>
         </div>
     </div>
 
@@ -266,7 +270,7 @@
             <div class="container">
                 <div class="videos_wrapper">
                     <div class="slider_header">
-                        <div class="title">স্টুডেন্ট <span>রিভিউ ক্লাস</span></div>
+                        <div class="title">স্টুডেন্ট রিভিউ ক্লাস</div>
                         <div class="video_slider_arrows">
                             <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
                             <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
@@ -347,7 +351,7 @@
     @endif
 
 
-    <div class="course_bar_wrapper">
+    <div class="countdown_bar_wrapper">
         <div class="container">
             <div class="countdown_bar">
                 <div class="text">
@@ -380,9 +384,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 
     <div class="checkout">
