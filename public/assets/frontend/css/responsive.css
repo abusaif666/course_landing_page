@@ -323,7 +323,7 @@ img {
     }
 
     .who_join_class_box {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 
     .checkout-grid {
@@ -340,122 +340,24 @@ img {
         text-align: center;
     }
 
-    .countdown_bar {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+
+    .countdown_bar .text{
+    font-size: 15px;
+
 }
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-
-    body {
-        padding: 10px;
-    }
-
-    .landing_page_video_area {
-        padding: 40px 10px;
-    }
-
-    .landing_page_video_area .video_player_wrapper {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16/9;
-    }
-
-    .landing_page_video_content h2 {
-        font-size: 22px !important;
-    }
-
-    .landing_page_video_content h3 {
-        font-size: 20px !important;
-    }
-
-    .landing_page_video_content p {
-        font-size: 14px !important;
-    }
-
-    .who_join_class_box {
-        grid-template-columns: 1fr !important;
-    }
-
-    .learn_this_course .box {
-        width: 100% !important;
-    }
-
-    .seat_book_box {
-        flex-direction: column;
-    }
-
-    .checkout {
-        padding: 15px !important;
-    }
-
-    .checkout-title {
-        font-size: 24px !important;
-    }
-
-    .countdown_box {
-        gap: 8px;
-    }
-
-    .time_box {
-        width: 70px;
-        height: 70px;
-    }
-
-    .time_box span {
-        font-size: 20px;
-    }
-
-    .btn_offer {
-        width: 100%;
-    }
+.timer .box{
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 60px;
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
-@media (max-width: 480px) {
-
-    .landing_page_video_content h2 {
-        font-size: 18px !important;
-    }
-
-    .landing_page_video_content h3 {
-        font-size: 16px !important;
-    }
-
-    .checkout-wrapper {
-        padding: 15px !important;
-    }
-
-    .course-title {
-        font-size: 16px !important;
-    }
-
-    .price-row,
-    .total {
-        font-size: 16px !important;
-    }
-
-    .countdown_card {
-        padding: 25px 15px;
-    }
-
-    .countdown_bar .text {
-        font-size: 13px;
-    }
-
-    .timer .box {
-        min-width: 45px;
-        padding: 6px 8px;
-    }
-
-    .timer .box span {
-        font-size: 14px;
-    }
+.timer .box small{
+    font-size: 10px;
 }
+
+
+
+
+}
+

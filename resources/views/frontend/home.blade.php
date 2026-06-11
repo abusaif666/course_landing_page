@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}">
 </head>
+
 <body>
 
     <div class="landing_page_top">
@@ -344,134 +346,100 @@
         </div>
     @endif
 
-    <div class="countdown_bar">
-        <div class="text">
-            কোর্স আজকে জয়েন হলে পাবেন <span>{{ en_to_bn($course->price - $course->discount_price) }} টাকা ছাড়!</span>
-        </div>
 
-        <div class="timer">
+    <div class="course_bar_wrapper">
+        <div class="container">
+            <div class="countdown_bar">
+                <div class="text">
+                    কোর্স আজকে জয়েন হলে পাবেন <span>{{ en_to_bn($course->price - $course->discount_price) }} টাকা
+                        ছাড়!</span>
+                </div>
 
-            <div class="box">
-                <span class="days">00</span>
-                <small>দিন</small>
-            </div>
+                <div class="timer">
 
-            <div class="box">
-                <span class="hours">00</span>
-                <small>ঘন্টা</small>
-            </div>
+                    <div class="box">
+                        <span class="days">00</span>
+                        <small>দিন</small>
+                    </div>
 
-            <div class="box">
-                <span class="minutes">00</span>
-                <small>মিনিট</small>
-            </div>
+                    <div class="box">
+                        <span class="hours">00</span>
+                        <small>ঘন্টা</small>
+                    </div>
 
-            <div class="box">
-                <span class="seconds">00</span>
-                <small>সেকেন্ড</small>
+                    <div class="box">
+                        <span class="minutes">00</span>
+                        <small>মিনিট</small>
+                    </div>
+
+                    <div class="box">
+                        <span class="seconds">00</span>
+                        <small>সেকেন্ড</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+
 
     <div class="checkout">
-
-        <div class="checkout-wrapper">
-
-            <h1 class="checkout-title">কমপ্লিট পেমেন্ট</h1>
-
-            <div class="top-border"></div>
-
-            <div class="checkout-grid">
-
-                <!-- LEFT SIDE -->
-
-                <div class="left-card">
-
-                    <div class="course-top">
-                        <img src="{{ asset('storage/course/' . $course->thumbnail) }}" alt="course_thumbnail">
-                        <div>
-                            <h2 class="course-title"> {{ $course->title ?? '' }} </h2>
+        <div class="container">
+            <h1 class="checkout_title_area">
+                <div class="title"> কোর্সে জয়েন করতে নিচের </div>
+                <div class="title"> ফর্মটি পূরণ করুন </div>
+            </h1>
+            <div class="checkout_wrapper">
+                <div class="checkout_box">
+                    <div class="top_title">সঠিক তথ্য দিন</div>
+                    <div class="checkout_box_preloader_wrapper">
+                        <div class="preloader_box">
+                            <div class="loader"></div>
                         </div>
                     </div>
-
-                    <div class="payment-details">
-                        <h3 class="section-title"> পেমেন্ট ডিটেইলস </h3>
-
-                        <div class="price-row">
-                            <span>কোর্স মূল্য</span>
-                            <span>৳ {{ $course->discount_price ?? '' }}</span>
+                    <form class="user_details_form" id="checkout_form" data-course-id="{{ $course->id }}">
+                        <div class="form_controll_wrapper">
+                            <label for="name">আপনার নাম</label>
+                            <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন">
+                            <small class="error_message"></small>
                         </div>
-
-
-                        <hr>
-
-                        <div class="total">
-                            <span>টোটাল পেমেন্ট:</span>
-                            <span>৳ {{ $course->discount_price ?? '' }}</span>
+                        <div class="form_controll_wrapper">
+                            <label for="email">ইমেইল অ্যাড্রেস</label>
+                            <input type="email" id="email" name="email" placeholder="আপনার ইমেইল লিখুন">
+                            <small class="error_message"></small>
                         </div>
-
-                    </div>
-
-                    <div class="support">
-                        📞 প্রয়োজনে
-                        <span>কল করুন +880 1343-914432</span>
-                    </div>
-
+                        <div class="form_controll_wrapper">
+                            <label for="phone">ফোন নাম্বার</label>
+                            <input type="text" id="phone" name="phone"
+                                placeholder="আপনার ফোন নাম্বার লিখুন">
+                            <small class="error_message"></small>
+                        </div>
+                        <div class="form_course_details_area">
+                            <div class="title">আপনার অর্ডার</div>
+                            <div class="course_box">
+                                <div class="image_area">
+                                    <img src="{{ asset('storage/course/' . $course->thumbnail) }}" alt="">
+                                </div>
+                                <div class="course_details_area">
+                                    <div class="course_name"> {{ $course->title ?? '' }} </div>
+                                    <div class="course_price"> <b>{{ en_to_bn($course->discount_price) }}৳</b> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_controll_btn_wrapper">
+                            <button type="submit" class="submit_btn">
+                                পেমেন্ট সম্পন্ন করুন →
+                            </button>
+                        </div>
+                    </form>
                 </div>
-
-                <!-- RIGHT SIDE -->
-
-                <div class="right-card">
-
-                    <div class="right-inner">
-
-                        <h3 class="payment-title">
-                            আপনার তথ্য দিন
-                        </h3>
-
-                        <form class="user_details_form" id="checkout_form" data-course-id="{{ $course->id }}">
-
-                            <div class="form_controll_wrapper">
-                                <label for="name">আপনার নাম</label>
-
-                                <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন">
-
-                                <small class="error_message"></small>
-                            </div>
-
-                            <div class="form_controll_wrapper">
-                                <label for="email">ইমেইল অ্যাড্রেস</label>
-
-                                <input type="email" id="email" name="email" placeholder="আপনার ইমেইল লিখুন">
-
-                                <small class="error_message"></small>
-                            </div>
-
-                            <div class="form_controll_wrapper">
-                                <label for="phone">ফোন নাম্বার</label>
-
-                                <input type="text" id="phone" name="phone"
-                                    placeholder="আপনার ফোন নাম্বার লিখুন">
-
-                                <small class="error_message"></small>
-                            </div>
-
-                            <div class="form_controll_btn_wrapper">
-                                <button type="submit" class="submit_btn">
-                                    পেমেন্ট সম্পন্ন করুন →
-                                </button>
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
             </div>
-
         </div>
     </div>
+
+
 
     <footer class="footer">
         <div class="container">
@@ -592,11 +560,11 @@
         });
 
         // Final Form Submit with AJAX
+
         $('.user_details_form').submit(function(e) {
             e.preventDefault();
 
             let url = `{{ route('payment.initiate', $course->id) }}`
-
 
             let isNameValid = validateName();
             let isEmailValid = validateEmail();
@@ -606,11 +574,13 @@
                 return;
             }
 
-            let form = $(this);
             let button = $('.submit_btn');
 
             button.addClass('loading');
             button.text('অপেক্ষা করুন...');
+
+            // PRELOADER SHOW
+            $('.checkout_box_preloader_wrapper').show();
 
             $.ajax({
                 url: url,
@@ -621,32 +591,41 @@
                     email: $('#email').val(),
                     phone: $('#phone').val(),
                 },
+
                 success: function(response) {
+
+                    // PRELOADER HIDE
+                    $('.checkout_box_preloader_wrapper').hide();
 
                     if (response.payment_url) {
                         window.location.href = response.payment_url;
                     }
-
                 },
 
                 error: function(xhr) {
+
+                    // PRELOADER HIDE
+                    $('.checkout_box_preloader_wrapper').hide();
+
                     button.removeClass('loading');
                     button.text('পেমেন্ট সম্পন্ন করুন →');
 
                     if (xhr.status === 422) {
+
                         let errors = xhr.responseJSON.errors;
 
                         $.each(errors, function(key, value) {
                             let input = $('#' + key);
                             showError(input, value[0]);
                         });
+
                     } else {
+
                         Swal.fire({
                             icon: 'error',
                             title: 'দুঃখিত, একটি সমস্যা হয়েছে!',
                             confirmButtonText: 'আবার চেষ্টা করুন',
-                            confirmButtonColor: '#e04f5f',
-                            footer: '<span style="color: #777;">সমস্যা সমাধান না হলে আমাদের সাপোর্টে যোগাযোগ করুন</span>'
+                            confirmButtonColor: '#e04f5f'
                         });
                     }
                 }
@@ -654,4 +633,5 @@
         });
     });
 </script>
+
 </html>
