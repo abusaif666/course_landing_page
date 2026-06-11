@@ -327,7 +327,7 @@
                         <div class="faq-item">
                             <div class="faq-question">
                                 {{ $faq->question }}
-                                <span class="accordian_icon"></span>
+                                <span class="accordian_icon"><i class="fa-solid fa-sort-up"></i></span>
                             </div>
 
                             <div class="faq-answer">

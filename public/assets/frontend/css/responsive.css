@@ -169,7 +169,7 @@
     height: 170px;
   }
 
-  
+
 .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area .button_area .registation_btn {
     font-size: 15px;
     padding: 12px 25px;
@@ -270,6 +270,29 @@
 
 .who_join_this_class .who_join_class_wrapper .who_join_class_box .box .box_content{
   font-size: 14px;
+}
+
+.learn_this_course .learn_this_course_wrapper .learn_this_course_boxex .box {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.learn_this_course .learn_this_course_wrapper .learn_this_course_boxex .box ul li {
+    padding: 10px 10px;
+    font-size: 13px;
+}
+
+.faq-question {
+    font-size: 14px;
+}
+
+.faq-answer {
+    font-size: 10px;
+}
+
+.accordian_icon {
+    font-size: 10px;
 }
 
 
