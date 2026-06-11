@@ -148,3 +148,129 @@
 
 
 }
+
+
+@media (max-width: 325px) {
+
+  .landing_page_video_area{
+    padding: 20px 0px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
+    font-size: 19px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content p {
+
+    font-size: 13px;
+}
+
+  .landing_page_video_area .landing_page_video_area_wrapper .center_area .video_player_wrapper {
+    height: 170px;
+  }
+
+  
+.landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area .button_area .registation_btn {
+    font-size: 15px;
+    padding: 12px 25px;
+}
+
+
+.landing_page_top .site_header .site_header_wrapper .header_right .button_area .register_btn {
+    font-size: 14px;
+    padding: 10px
+}
+
+.countdown_section {
+    padding: 30px 0px;
+}
+
+  .time_box {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .time_box span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .time_box small {
+    font-size: 10px;
+  }
+
+  .countdown_card {
+    padding: 20px 0px;
+}
+
+.btn_offer {
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.lp_box{
+    padding: 20px 0;
+  }
+
+  .lp-badge{
+    padding:6px 10px;
+    font-size:10px;
+}
+
+.lp-title{
+  font-size: 15px;
+}
+
+.lp-btn{
+    padding:10px;
+    font-size:15px;
+    margin-top:10px;
+
+}
+
+.learn_this_course .learn_this_course_wrapper .bottom_area .button_area .reg_btn {
+    font-size: 15px;
+    padding: 7px 10px;
+    gap: 10px;
+}
+
+.accordian_bottom_area .button_area .reg_btn {
+    font-size: 15px;
+    padding: 7px 10px;
+    gap: 10px;
+}
+
+.checkout .checkout_title_area{
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.checkout_wrapper .checkout_box{
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.checkout .form_course_details_area .course_box img{
+    width: 50px;
+    border-radius: 5px;
+}
+
+.checkout .form_course_details_area .course_name{
+  font-size: 12px;
+}
+
+.who_join_this_class .who_join_class_wrapper .title {
+    font-size: 22px;
+}
+
+.who_join_this_class .who_join_class_wrapper .who_join_class_box .box{
+  padding: 10px;
+}
+
+.who_join_this_class .who_join_class_wrapper .who_join_class_box .box .box_content{
+  font-size: 14px;
+}
+
+
+}

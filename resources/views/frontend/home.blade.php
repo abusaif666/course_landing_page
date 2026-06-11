@@ -445,17 +445,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer_wrapper">
-                <div class="left">
-                    <p>© 2025 | Business Academy | All rights reserved.</p>
-                </div>
-                <div class="right">
-                    <ul class="social">
-                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
+                    <p>© {{ date('Y') }} | BD Online Services | All rights reserved.</p>
             </div>
         </div>
     </footer>

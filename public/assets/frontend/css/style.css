@@ -656,32 +656,19 @@ body {
 
 .footer .footer_wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
-.footer .footer_wrapper .left p {
+.footer .footer_wrapper p {
     font-size: 13px;
+    text-align: center;
 }
-
-.footer .footer_wrapper .right .social {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    list-style-type: none;
-}
-
-.footer .footer_wrapper .right .social li a {
-    color: white;
-    font-size: 12px;
-}
-
-
 
 
 
 .checkout {
-    padding: 50px;
+    padding: 50px 0px;
     display: flex;
     justify-content: center;
     align-content: center;
