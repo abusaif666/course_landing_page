@@ -136,57 +136,57 @@
     <div class="countdown_section">
         <div class="container">
             <div class="countdown_card">
-            <h2 class="title">রেগুলার প্রাইস <del>{{ en_to_bn($course->price ?? '') }}/-</del></h2>
-            <h1 class="price">অফার প্রাইস {{ en_to_bn($course->discount_price ?? '') }}/-</h1>
+                <h2 class="title">রেগুলার প্রাইস <del>{{ en_to_bn($course->price ?? '') }}/-</del></h2>
+                <h1 class="price">অফার প্রাইস {{ en_to_bn($course->discount_price ?? '') }}/-</h1>
 
-            <p class="sub_title">অফারটি চলবে:</p>
+                <p class="sub_title">অফারটি চলবে:</p>
 
-            <div class="countdown_box">
+                <div class="countdown_box">
 
-                <div class="time_box">
-                    <span class="days"></span>
-                    <small>দিন</small>
+                    <div class="time_box">
+                        <span class="days"></span>
+                        <small>দিন</small>
+                    </div>
+
+                    <div class="time_box">
+                        <span class="hours"></span>
+                        <small>ঘন্টা</small>
+                    </div>
+
+                    <div class="time_box">
+                        <span class="minutes"></span>
+                        <small>মিনিট</small>
+                    </div>
+
+                    <div class="time_box">
+                        <span class="seconds"></span>
+                        <small>সেকেন্ড</small>
+                    </div>
                 </div>
 
-                <div class="time_box">
-                    <span class="hours"></span>
-                    <small>ঘন্টা</small>
-                </div>
-
-                <div class="time_box">
-                    <span class="minutes"></span>
-                    <small>মিনিট</small>
-                </div>
-
-                <div class="time_box">
-                    <span class="seconds"></span>
-                    <small>সেকেন্ড</small>
-                </div>
+                <button class="btn_offer register_btn">এখনই এনরোল করুন</button>
             </div>
-
-            <button class="btn_offer register_btn">এখনই এনরোল করুন</button>
-        </div>
         </div>
     </div>
 
     <div class="lp_box">
         <div class="container">
-                    <div class="lp-wrapper">
-            <div class="lp-box">
+            <div class="lp-wrapper">
+                <div class="lp-box">
 
-                <div class="lp-badge">
-                    🎁 যারা join করবেন তাদের জন্য special gift
-                </div>
+                    <div class="lp-badge">
+                        🎁 যারা join করবেন তাদের জন্য special gift
+                    </div>
 
-                <h1 class="lp-title">২০০০ টাকা মূল্যের ‘THE PROJECT 30K’ (৩০,০০০+ ভিডিও) বান্ডিলটি আজ কোর্সের সাথে
-                    পাচ্ছেন একদম ফ্রি!</h1>
+                    <h1 class="lp-title">২০০০ টাকা মূল্যের ‘THE PROJECT 30K’ (৩০,০০০+ ভিডিও) বান্ডিলটি আজ কোর্সের সাথে
+                        পাচ্ছেন একদম ফ্রি!</h1>
 
-                <div class="lp-price">
-                    <del> {{ en_to_bn('2,000') }} </del>
-                    <div class="lp-free">FREE</div>
-                </div>
+                    <div class="lp-price">
+                        <del> {{ en_to_bn('2,000') }} </del>
+                        <div class="lp-free">FREE</div>
+                    </div>
 
-                {{-- <div class="lp-info">
+                    {{-- <div class="lp-info">
                 এই master class-এ যারা join করবেন, তারা আমার ৮০,০০০ টাকার Ecom Dropshipping Mastery Course টি free তে
                 করার সুযোগ পাবেন।
                 <br><br>
@@ -197,14 +197,14 @@
                 এই কোর্সে আপনি Facebook Ads, Google Ads, niche selection, scaling strategy সব কিছু শিখতে পারবেন।
             </div> --}}
 
-                <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
+                    <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
 
-                <div class="lp-seats">
-                    ● বাকি আছে মাত্র {{ en_to_bn($course->total_seat) }} টা seat
+                    <div class="lp-seats">
+                        ● বাকি আছে মাত্র {{ en_to_bn($course->total_seat) }} টা seat
+                    </div>
+
                 </div>
-
             </div>
-        </div>
         </div>
     </div>
 
@@ -271,23 +271,24 @@
                 <div class="videos_wrapper">
                     <div class="slider_header">
                         <div class="title">স্টুডেন্ট রিভিউ ক্লাস</div>
+                    </div>
+                    <div class="video_slider_arrow_wrapper">
+                        <div class="video_items">
+                            @foreach ($testimonial as $video)
+                                <div class="slide">
+                                    <div class="video_box">
+                                        <iframe src="https://www.youtube.com/embed/{{ $video->video }}"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                         <div class="video_slider_arrows">
                             <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
                             <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
-                    </div>
-
-                    <div class="video_items">
-                        @foreach ($testimonial as $video)
-                            <div class="slide">
-                                <div class="video_box">
-                                    <iframe src="https://www.youtube.com/embed/{{ $video->video }}"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        @endforeach
                     </div>
                 </div>
             </div>
@@ -299,10 +300,6 @@
             <div class="container">
                 <div class="slider_header">
                     <div class="title">স্টুডেন্ট রেজাল্ট</div>
-                    <div class="image_slider_arrows">
-                        <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
                 </div>
                 <div class="image_slider_wrapper">
                     <div class="slick-image-slider">
@@ -311,7 +308,10 @@
                                 <img src="{{ asset('storage/student_result/' . $data->photo) }}" width="80">
                             </div>
                         @endforeach
-
+                    </div>
+                    <div class="image_slider_arrows">
+                        <button class="arrow left_arrow"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="arrow right_arrow"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -445,7 +445,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer_wrapper">
-                    <p>© {{ date('Y') }} | BD Online Services | All rights reserved.</p>
+                <p>© {{ date('Y') }} | BD Online Services | All rights reserved.</p>
             </div>
         </div>
     </footer>
