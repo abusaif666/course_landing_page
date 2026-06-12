@@ -296,4 +296,30 @@
 }
 
 
+.countdown_bar {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.countdown_bar .text {
+    font-size: 12px;
+}
+
+.timer .box {
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-align: center;
+    width: auto;
+    line-height: 11px;
+}
+
+.timer .box span {
+    font-size: 12px;
+}
+
+.timer .box small {
+    font-size: 9px;
+}
+
+
 }

@@ -301,7 +301,7 @@
                 <div class="slider_header">
                     <div class="title">স্টুডেন্ট রেজাল্ট</div>
                 </div>
-                <div class="image_slider_wrapper">
+                <div class="image_slider_box">
                     <div class="slick-image-slider">
                         @foreach ($result as $data)
                             <div class="slide">

@@ -381,8 +381,8 @@ body {
     text-align: center;
     padding: 50px 30px;
     border-radius: 18px;
-    /* background: linear-gradient(135deg, #020024, #001b6e, #003cff); */
-    background-color: #151515;
+    background: linear-gradient(135deg, #17070F, #5D331E, #1D0A12);
+    /* background-color: #151515; */
     color: #fff;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
@@ -763,9 +763,9 @@ body {
 
 .videos_wrapper .slider_header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .video_slider_arrow_wrapper {
@@ -830,17 +830,21 @@ body {
 
 
 /* ===== STUDENT IMAGE SLIDER AREA START ===== */
-.image_slider_wrapper {
-    padding: 60px 0;
+.image_slider_wrapper{
+    padding: 50px 0;
+}
+
+.image_slider_box {
     background: #040404;
     position: relative;
 }
 
-.slider_header {
+.image_slider_wrapper .slider_header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+
+    margin-bottom: 20px;
 }
 
 .slider_header .title {
@@ -850,16 +854,6 @@ body {
     position: relative;
 }
 
-.slider_header .title::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #4f46e5;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    border-radius: 10px;
-}
 
 .image_slider_arrows {
     position: absolute;
@@ -1212,7 +1206,6 @@ body {
     padding: 12px 20px;
     z-index: 9999;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-    display: none;
 }
 
 
