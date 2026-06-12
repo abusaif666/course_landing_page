@@ -371,7 +371,20 @@ body {
     display: flex;
     justify-content: center;
     padding: 60px 15px;
-    background: #080B14;
+    background: radial-gradient(circle at top,#7a1d1d 0%,#080d1f 40%,#020816 100%);
+    position:relative;
+    overflow:hidden;
+}
+
+.countdown_section::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255, 94, 0, 0.15);
+    filter:blur(120px);
+    top:-150px;
+    left:-100px;
 }
 
 .countdown_card {
@@ -380,11 +393,37 @@ body {
     max-width: 800px;
     text-align: center;
     padding: 50px 30px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #17070F, #5D331E, #1D0A12);
-    /* background-color: #151515; */
     color: #fff;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    border-radius:30px;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+    0 0 30px rgba(255,140,0,.15),
+    inset 0 0 20px rgba(255,255,255,.03);
+    position:relative;
+}
+
+.countdown_card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    padding:1px;
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #ffb347,
+        #ff6b00,
+        #ffd700
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
 }
 
 .countdown_card .title {
@@ -403,7 +442,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* countdown boxes */
+
 .countdown_box {
     display: flex;
     justify-content: center;
@@ -445,6 +484,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
+    z-index: 9999;
 }
 
 .btn_offer:hover {
@@ -568,7 +609,7 @@ body {
 
 
 /* ========== WHO JOIN COURSE AREA START ========== */
-.who_join_this_class {
+/* .who_join_this_class {
     padding: 40px 0;
 }
 
@@ -643,6 +684,258 @@ body {
 
 .who_join_this_class .who_join_class_wrapper .who_join_class_box .box .box_content {
     color: #BBBBBB;
+} */
+
+/*==========================
+ WHY JOIN CLASS
+===========================*/
+
+.who_join_this_class{
+    padding:80px 0;
+    background:
+    radial-gradient(circle at top,#20083f 0%,#0b0820 45%,#050816 100%);
+    position:relative;
+    overflow:hidden;
+}
+
+.who_join_this_class::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    left:-250px;
+    top:-250px;
+    background:rgba(255,140,0,.08);
+    filter:blur(150px);
+}
+
+.who_join_this_class::after{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-200px;
+    bottom:-200px;
+    background:rgba(132,0,255,.08);
+    filter:blur(150px);
+}
+
+.who_join_class_wrapper .title{
+    text-align:center;
+    color:#fff;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.who_join_class_wrapper .title::before{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:2px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #ff9d00,
+        transparent
+    );
+    bottom:-15px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.who_join_class_wrapper .title::after{
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#ff9d00;
+    bottom:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:
+    0 0 15px #ff9d00,
+    0 0 30px #ff9d00;
+}
+
+.who_join_class_box{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/*==========================
+ CARD
+===========================*/
+
+.who_join_class_box .box{
+    position:relative;
+    overflow:hidden;
+
+    padding:35px 25px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(81,31,146,.45),
+        rgba(25,11,60,.75)
+    );
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    transition:.45s;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+}
+
+/* glass shine animation */
+
+.who_join_class_box .box::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:70%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:glassMove 5s linear infinite;
+}
+
+@keyframes glassMove{
+
+    0%{
+        left:-120%;
+    }
+
+    100%{
+        left:150%;
+    }
+
+}
+
+/* border glow */
+
+.who_join_class_box .box::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    padding:1px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,166,0,.9),
+        rgba(255,255,255,.15),
+        rgba(255,166,0,.7)
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+}
+
+.who_join_class_box .box:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 15px 40px rgba(255,140,0,.18),
+    0 0 35px rgba(255,140,0,.15);
+}
+
+/*==========================
+ ICON
+===========================*/
+
+.box_icon{
+    width:75px;
+    height:75px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,140,0,.15),
+        rgba(255,255,255,.05)
+    );
+
+    border:1px solid rgba(255,166,0,.3);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 25px rgba(255,166,0,.15);
+}
+
+.box_icon i{
+    font-size:28px;
+    color:#ffb100;
+}
+
+/*==========================
+ CONTENT
+===========================*/
+
+.box_content{
+    color:#fff;
+    font-size:18px;
+    line-height:1.8;
+    position:relative;
+    z-index:2;
+}
+
+/*==========================
+ RESPONSIVE
+===========================*/
+
+@media(max-width:991px){
+
+    .who_join_class_box{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:767px){
+
+    .who_join_class_box{
+        grid-template-columns:1fr;
+    }
+
+    .who_join_class_wrapper .title{
+        font-size:30px;
+    }
+
 }
 
 /* ========== WHO JOIN COURSE AREA END ========== */
@@ -678,7 +971,7 @@ body {
 }
 
 .learn_this_course .learn_this_course_wrapper .learn_this_course_boxex .box {
-    width: 700px;
+    width: 500px;
     border-radius: 20px;
     padding: 20px;
     background: linear-gradient(#004781, #01233E);
