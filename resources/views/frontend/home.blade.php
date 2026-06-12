@@ -238,10 +238,11 @@
                     <div class="learn_this_course_boxex">
                         <div class="box">
                             <ul>
-                                @foreach ($outlines as $outline)
+                                @foreach ($outlines as $key=>$outline)
                                     <li>
                                         <div class="icon">
-                                            <i class="fa-solid fa-caret-right"></i>
+                                            {{-- <i class="fa-solid fa-caret-right"></i> --}}
+                                            {{ $key+1 }}
                                         </div>
                                         <p> {{ $outline->outline ?? '' }} </p>
                                     </li>

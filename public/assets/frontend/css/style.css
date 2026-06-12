@@ -942,7 +942,7 @@ body {
 
 
 /* ========== COURSE LEARN AREA START ==========  */
-.learn_this_course {
+/* .learn_this_course {
     padding: 40PX 0;
 }
 
@@ -1043,6 +1043,381 @@ body {
 .learn_this_course .learn_this_course_wrapper .bottom_area .total_seat span {
     color: #ffffff;
     font-size: 15px;
+} */
+
+/* ===================================
+LEARN THIS COURSE SECTION
+=================================== */
+
+.learn_this_course{
+    padding:90px 0;
+    background:
+    radial-gradient(circle at top,#1f0a3d 0%,#0b0820 40%,#050816 100%);
+    position:relative;
+    overflow:hidden;
+}
+
+.learn_this_course::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    left:-250px;
+    top:-250px;
+    background:rgba(255,140,0,.08);
+    filter:blur(180px);
+}
+
+.learn_this_course::after{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    right:-250px;
+    bottom:-250px;
+    background:rgba(170,0,255,.08);
+    filter:blur(180px);
+}
+
+/* ===================================
+TITLE
+=================================== */
+
+.title_area{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title_area .title{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 40px;
+
+    color:#ffcc70;
+    font-size:34px;
+    font-weight:700;
+
+    border-radius:60px;
+
+    background:
+    rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,166,0,.25);
+
+    box-shadow:
+    0 0 25px rgba(255,140,0,.15);
+}
+
+/* ===================================
+MAIN BOX
+=================================== */
+
+.learn_this_course_boxex .box{
+    max-width:700px;
+    margin:auto;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(60,20,120,.25),
+    rgba(10,10,30,.8)
+    );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+
+    position:relative;
+}
+
+/* glowing border */
+
+.learn_this_course_boxex .box::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:30px;
+    padding:1px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff8c00,
+    #7b2cff,
+    #ff8c00
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+}
+
+.learn_this_course_boxex ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+/* ===================================
+ITEMS
+=================================== */
+
+.learn_this_course_boxex ul li{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:20px;
+
+    margin-bottom:16px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(25,25,60,.85),
+    rgba(20,10,45,.85)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+/* SHINE EFFECT */
+
+.learn_this_course_boxex ul li::before{
+    content:'';
+    position:absolute;
+
+    top:0;
+    left:-150%;
+
+    width:40%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.18),
+    transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:lineShine 8s linear infinite;
+}
+
+/* sequential animation */
+
+.learn_this_course_boxex ul li:nth-child(1)::before{
+    animation-delay:0s;
+}
+
+.learn_this_course_boxex ul li:nth-child(2)::before{
+    animation-delay:1s;
+}
+
+.learn_this_course_boxex ul li:nth-child(3)::before{
+    animation-delay:2s;
+}
+
+.learn_this_course_boxex ul li:nth-child(4)::before{
+    animation-delay:3s;
+}
+
+.learn_this_course_boxex ul li:nth-child(5)::before{
+    animation-delay:4s;
+}
+
+.learn_this_course_boxex ul li:nth-child(6)::before{
+    animation-delay:5s;
+}
+
+.learn_this_course_boxex ul li:nth-child(7)::before{
+    animation-delay:6s;
+}
+
+.learn_this_course_boxex ul li:nth-child(8)::before{
+    animation-delay:7s;
+}
+
+@keyframes lineShine{
+
+    0%{
+        left:-150%;
+    }
+
+    15%{
+        left:150%;
+    }
+
+    100%{
+        left:150%;
+    }
+}
+
+.learn_this_course_boxex ul li:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(255,140,0,.15);
+}
+
+/* ===================================
+ICON
+=================================== */
+
+.learn_this_course_boxex .icon{
+    min-width:42px;
+    width:42px;
+    height:42px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9f0a,
+    #ffcc70
+    );
+
+    color:#111;
+
+    font-size:16px;
+    font-weight:bold;
+
+    box-shadow:
+    0 0 20px rgba(255,166,0,.25);
+}
+
+.learn_this_course_boxex li p{
+    margin:0;
+    color:#fff;
+    font-size:18px;
+    line-height:1.7;
+    font-weight:500;
+}
+
+/* ===================================
+BUTTON
+=================================== */
+
+.bottom_area{
+    margin-top:40px;
+    text-align:center;
+}
+
+.reg_btn{
+    display:inline-flex;
+    align-items:center;
+    gap:20px;
+
+    padding:18px 40px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,140,0,.15),
+    rgba(123,44,255,.15)
+    );
+
+    border:1px solid rgba(255,166,0,.25);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 25px rgba(255,140,0,.15);
+
+    transition:.4s;
+}
+
+.reg_btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 15px 35px rgba(255,140,0,.25);
+}
+
+.reg_btn .line{
+    width:1px;
+    height:30px;
+    background:rgba(255,255,255,.2);
+}
+
+.reg_btn span:last-child{
+    color:#ffcc70;
+    font-weight:700;
+}
+
+/* ===================================
+SEAT TEXT
+=================================== */
+
+.total_seat{
+    margin-top:18px;
+    color:#ddd;
+    font-size:18px;
+}
+
+.total_seat span{
+    color:#ff9f0a;
+    font-weight:700;
+}
+
+/* ===================================
+MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .title_area .title{
+        font-size:24px;
+        padding:12px 25px;
+    }
+
+    .learn_this_course_boxex ul li{
+        padding:15px;
+    }
+
+    .learn_this_course_boxex li p{
+        font-size:15px;
+    }
+
+    .reg_btn{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
 }
 
 /* ========== COURSE LEARN AREA END ==========  */
