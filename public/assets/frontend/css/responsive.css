@@ -1,5 +1,31 @@
 @media (max-width: 991px) {
 
+  .landing_page_video_area {
+    padding: 40px 0;
+  }
+
+  .who_join_this_class {
+    padding: 40px 0;
+  }
+
+  .learn_this_course {
+    padding: 40px 0;
+  }
+
+  .video_slider_wrapper {
+    padding: 40px;
+  }
+
+  .image_slider_wrapper {
+    padding: 40px 0;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area .button_area .registation_btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+
   .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
     font-size: 27px;
     line-height: 40px;
@@ -22,7 +48,7 @@
     padding: 20px;
   }
 
-    .who_join_class_box .box_icon {
+  .who_join_class_box .box_icon {
     width: 50px;
     height: 50px;
     margin: 0 auto 10px;
@@ -39,21 +65,21 @@
 
   .countdown_bar .text {
     font-size: 16px;
-}
+  }
 
-.timer .box {
+  .timer .box {
     padding: 5px 10px;
     width: 60px;
     line-height: 15px;
-}
+  }
 
-.timer .box span {
+  .timer .box span {
     font-size: 15px;
-}
+  }
 
-.timer .box small {
+  .timer .box small {
     font-size: 10px;
-}
+  }
 
 
 
@@ -61,6 +87,26 @@
 
 
 @media (max-width: 767px) {
+
+  .landing_page_video_area {
+    padding: 30px 0;
+  }
+
+  .who_join_this_class {
+    padding: 30px 0;
+  }
+
+  .learn_this_course {
+    padding: 30px 0;
+  }
+
+  .video_slider_wrapper {
+    padding: 30px;
+  }
+
+  .image_slider_wrapper {
+    padding: 30px 0;
+  }
 
   .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
     font-size: 25px;
@@ -87,37 +133,40 @@
     line-height: 1.4;
   }
 
-    .who_join_this_class .who_join_class_wrapper .who_join_class_box {
+  .who_join_this_class .who_join_class_wrapper .who_join_class_box {
     grid-template-columns: repeat(1, 1fr);
   }
 
-    .countdown_bar .text {
+  .countdown_bar .text {
     font-size: 16px;
-}
+  }
 
-.countdown_bar{
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 5px;
-}
+  .countdown_bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
 
-.timer .box {
+  .timer .box {
     padding: 5px 10px;
     width: 60px;
     line-height: 15px;
-}
+  }
 
-.timer .box span {
+  .timer .box span {
     font-size: 15px;
-}
+  }
 
-.timer .box small {
+  .timer .box small {
     font-size: 10px;
+  }
+
+  .title_area .title {
+    padding: 14px 40px;
+    font-size: 23px;
 }
-
-
 
 
 }
@@ -128,6 +177,43 @@
   .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
     font-size: 22px;
   }
+
+  .who_join_class_wrapper .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.lp-btn {
+    margin-top: 12px;
+}
+
+  .countdown_section {
+    padding: 20px;
+  }
+
+  .countdown_card {
+    padding: 20px 30px;
+}
+
+  .lp_box {
+    padding: 20px 0;
+}
+
+.countdown_card .title {
+    margin-bottom: 10px;
+}
+
+.countdown_card .price {
+    margin-bottom: 5px;
+}
+
+.sub_title {
+    margin-bottom: 10px;
+}
+
+.countdown_box {
+    margin-bottom: 20px;
+}
 
   .time_box {
     width: 60px;
@@ -211,7 +297,7 @@
 }
 
 
-@media (max-width: 325px) {
+@media (max-width: 445px) {
 
   .landing_page_video_area {
     padding: 20px 0px;

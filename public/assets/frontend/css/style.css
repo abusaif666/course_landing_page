@@ -915,7 +915,6 @@ body {
     position: relative;
 }
 
-/* glowing border */
 
 .learn_this_course_boxex .box::after {
     content: '';
@@ -962,7 +961,6 @@ body {
     transition: .4s;
 }
 
-/* SHINE EFFECT */
 
 .learn_this_course_boxex ul li::before {
     content: '';
@@ -1097,9 +1095,6 @@ body {
     font-weight: 700;
 }
 
-/* ===================================
-SEAT TEXT
-=================================== */
 
 .total_seat {
     margin-top: 18px;
@@ -1110,32 +1105,6 @@ SEAT TEXT
 .total_seat span {
     color: #ff9f0a;
     font-weight: 700;
-}
-
-/* ===================================
-MOBILE
-=================================== */
-
-@media(max-width:768px) {
-
-    .title_area .title {
-        font-size: 24px;
-        padding: 12px 25px;
-    }
-
-    .learn_this_course_boxex ul li {
-        padding: 15px;
-    }
-
-    .learn_this_course_boxex li p {
-        font-size: 15px;
-    }
-
-    .reg_btn {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
 }
 
 /* ========== COURSE LEARN AREA END ==========  */
