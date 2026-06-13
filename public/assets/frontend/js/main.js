@@ -295,6 +295,12 @@ $(document).on('click', '.register_btn', function(e) {
     });
 });
 
+    $('.learn_this_course_boxex ul li').each(function(index) {
+
+        $(this).css('--delay', (index * 1) + 's');
+
+    });
+
 
 
 
