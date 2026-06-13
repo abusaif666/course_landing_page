@@ -238,11 +238,11 @@
                     <div class="learn_this_course_boxex">
                         <div class="box">
                             <ul>
-                                @foreach ($outlines as $key=>$outline)
+                                @foreach ($outlines as $key => $outline)
                                     <li>
                                         <div class="icon">
                                             {{-- <i class="fa-solid fa-caret-right"></i> --}}
-                                            {{ $key+1 }}
+                                            {{ $key + 1 }}
                                         </div>
                                         <p> {{ $outline->outline ?? '' }} </p>
                                     </li>
@@ -527,10 +527,15 @@
                 return false;
             }
 
-            let phonePattern = /^(01[3-9]\d{8})$/;
+            if (!/^\d{11}$/.test(value)) {
+                showError(input, 'ফোন নাম্বার অবশ্যই ১১ সংখ্যার হতে হবে।');
+                return false;
+            }
+
+            let phonePattern = /^01[3-9]\d{8}$/;
 
             if (!phonePattern.test(value)) {
-                showError(input, 'ফোন নাম্বার অবশ্যই ১১ সংখ্যার হতে হবে।');
+                showError(input, 'দয়া করে আপনার সঠিক ফোন নাম্বার লিখুন।');
                 return false;
             }
 
