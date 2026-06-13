@@ -646,7 +646,7 @@ body {
     font-weight: 700;
     margin-bottom: 50px;
     position: relative;
-        background: linear-gradient(to right,
+    background: linear-gradient(to right,
             #ee9207 0%,
             #ffffff 50%,
             #c47807 100%);
@@ -714,7 +714,7 @@ body {
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, .35);
-        z-index: 999;
+    z-index: 999;
 }
 
 /* glass shine animation */
@@ -1123,7 +1123,7 @@ body {
     margin-bottom: 20px;
 }
 
-.videos_wrapper .slider_header .title{
+.videos_wrapper .slider_header .title {
     background: linear-gradient(to right,
             #FEFE5F 0%,
             #ffffff 50%,
@@ -1216,7 +1216,7 @@ body {
     font-weight: 700;
     color: #e7e7e7;
     position: relative;
-        background: linear-gradient(to right,
+    background: linear-gradient(to right,
             #FEFE5F 0%,
             #ffffff 50%,
             #FEFE5F 100%);
@@ -1292,7 +1292,7 @@ body {
 
 /* ========== ACCORDIAN AREA START ========== */
 .accordian {
-    padding: 40PX 0;
+    padding: 40px 0;
 }
 
 .faq-section {

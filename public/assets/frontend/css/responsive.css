@@ -174,6 +174,12 @@
 
 @media (max-width: 525px) {
 
+
+  .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area {
+    gap: 0px;
+    margin-top: -20px;
+}
+
   .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
     font-size: 22px;
   }
@@ -251,6 +257,51 @@
     gap: 20px;
   }
 
+  .countdown_card .title {
+    margin-bottom: 5px;
+}
+
+.countdown_card .price {
+    margin-bottom: 5px;
+}
+
+.sub_title {
+    margin-bottom: 5px;
+}
+
+.who_join_this_class{
+  padding: 15px 0;
+}
+
+.who_join_class_box{
+  gap: 10px;
+}
+
+.who_join_class_wrapper .title {
+  margin-bottom: 32px;
+}
+
+.learn_this_course{
+  padding: 15px 0;
+}
+
+.learn_this_course .title_area{
+  margin-bottom: 24px;
+}
+
+.title_area .title{
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+.learn_this_course .bottom_area {
+  margin-top: 15px;
+}
+
+.accordian{
+  margin: 20px;
+}
+
 
 }
 
@@ -264,38 +315,6 @@
 
 
 }
-
-
-@media (max-width: 398px) {
-
-  .countdown_box {
-    gap: 10px;
-  }
-
-
-  .time_box {
-    width: 55px;
-    height: 55px;
-    border-radius: 3px;
-  }
-
-  .time_box span {
-    font-size: 19px;
-    font-weight: bold;
-  }
-
-  .time_box small {
-    font-size: 10px;
-  }
-
-  .countdown_card .price {
-    font-size: 24px;
-    font-weight: 600;
-  }
-
-
-}
-
 
 @media (max-width: 445px) {
 
@@ -531,3 +550,36 @@
 
 
 }
+
+
+@media (max-width: 398px) {
+
+  .countdown_box {
+    gap: 10px;
+  }
+
+
+  .time_box {
+    width: 55px;
+    height: 55px;
+    border-radius: 3px;
+  }
+
+  .time_box span {
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .time_box small {
+    font-size: 10px;
+  }
+
+  .countdown_card .price {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+
+}
+
+
