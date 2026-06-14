@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('email')->nullable();
-            $table->decimal('course_price', 10, 2);
+            $table->integer('course_price')->nullable();
             $table->string('payment_method')->nullable();
             $table->string('transaction_id')->nullable();
             $table->string('payment_status');

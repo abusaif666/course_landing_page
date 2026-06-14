@@ -30,7 +30,7 @@
             </div>
 
             <div class="table-header-bottom">
-                <input type="search" class="table-search" placeholder="Search">
+               
             </div>
 
         </div>

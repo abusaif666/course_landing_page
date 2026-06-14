@@ -10,7 +10,7 @@ class SmtpSeeder extends Seeder
     public function run()
     {
         SmtpSetting::create([
-            'mail_type' => 'default',
+            'mail_type' => 'payment',
             'mail_mailer' => 'smtp',
             'mail_host' => 'smtp.gmail.com',
             'mail_port' => '587',

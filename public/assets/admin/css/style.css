@@ -37,6 +37,38 @@ li {
     width: 100%;
 }
 
+
+.admin_dashboard_card_modern {
+    background: linear-gradient(135deg, #ffffff, #fff9d6);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.admin_dashboard_card_modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.admin_dashboard_card_modern h6 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.admin_dashboard_card_modern h3,
+.admin_dashboard_card_modern h2 {
+    font-weight: 700;
+    color: #222;
+}
+
+.admin_dashboard_card_modern.big {
+    text-align: center;
+    padding: 30px;
+}
+
 .page_title {
     color: #3f3f3f;
     font-size: 28px;

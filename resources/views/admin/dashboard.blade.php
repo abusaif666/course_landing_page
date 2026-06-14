@@ -4,89 +4,116 @@
 
 @section('content')
 
-<div class="row g-4">
+<div class="container-fluid admin_dashboard_wrapper">
 
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white border-0 shadow-sm">
-            <div class="card-body">
-
-                <h6 class="mb-2">
-                    Today Visitors
-                </h6>
-
-                <h2 class="fw-bold">
-                    {{ $today }}
-                </h2>
-
-            </div>
-        </div>
+    {{-- PAGE TITLE --}}
+    <div class="admin_dashboard_header mb-4">
+        <h2 class="fw-bold text-start">
+            Dashboard
+        </h2>
     </div>
 
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white border-0 shadow-sm">
-            <div class="card-body">
+    {{-- ================= INCOME SECTION ================= --}}
+    <div class="admin_dashboard_section mb-5">
 
-                <h6 class="mb-2">
-                    This Week
-                </h6>
+        <h5 class="admin_dashboard_section_title text-start mb-3">
+            Income Overview
+        </h5>
 
-                <h2 class="fw-bold">
-                    {{ $thisWeek }}
-                </h2>
+        <div class="row g-3">
 
+            {{-- CARD --}}
+            @php
+                $cardClass = "admin_dashboard_card_modern";
+            @endphp
+
+            <div class="col-xl-3 col-md-6">
+                <div class="{{ $cardClass }}">
+                    <h6>Today Income</h6>
+                    <h3>{{ $todayIncome }} TK</h3>
+                </div>
             </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="{{ $cardClass }}">
+                    <h6>This Week Income</h6>
+                    <h3>{{ $thisWeekIncome }} TK</h3>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="{{ $cardClass }}">
+                    <h6>This Month Income</h6>
+                    <h3>{{ $thisMonthIncome }} TK</h3>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="{{ $cardClass }}">
+                    <h6>Previous Month Income</h6>
+                    <h3>{{ $prevMonthIncome }} TK</h3>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern big">
+                    <h6>Total Income</h6>
+                    <h2>{{ $totalIncome }} TK</h2>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-warning text-dark border-0 shadow-sm">
-            <div class="card-body">
+    {{-- ================= VISITOR SECTION ================= --}}
+    <div class="admin_dashboard_section">
 
-                <h6 class="mb-2">
-                    This Month
-                </h6>
+        <h5 class="admin_dashboard_section_title text-start mb-3">
+            Visitor Overview
+        </h5>
 
-                <h2 class="fw-bold">
-                    {{ $thisMonth }}
-                </h2>
+        <div class="row g-3">
 
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern">
+                    <h6>Today Visitors</h6>
+                    <h3>{{ $today }}</h3>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white border-0 shadow-sm">
-            <div class="card-body">
-
-                <h6 class="mb-2">
-                    Previous Month
-                </h6>
-
-                <h2 class="fw-bold">
-                    {{ $prevMonth }}
-                </h2>
-
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern">
+                    <h6>This Week Visitors</h6>
+                    <h3>{{ $thisWeek }}</h3>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="col-12">
-        <div class="card bg-dark text-white border-0 shadow-sm">
-            <div class="card-body text-center">
-
-                <h5 class="mb-2">
-                    Total Visitors
-                </h5>
-
-                <h1 class="fw-bold">
-                    {{ $totalVisitors }}
-                </h1>
-
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern">
+                    <h6>This Month Visitors</h6>
+                    <h3>{{ $thisMonth }}</h3>
+                </div>
             </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern">
+                    <h6>Previous Month Visitors</h6>
+                    <h3>{{ $prevMonth }}</h3>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin_dashboard_card_modern big">
+                    <h6>Total Visitors</h6>
+                    <h2>{{ $totalVisitors }}</h2>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
 </div>
-
 
 @endsection
