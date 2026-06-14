@@ -31,6 +31,19 @@
                 </ul>
             </li>
 
+            {{-- Bonus Course Menu --}}
+            <li
+                class="has-submenu {{ request()->routeIs('bonus-course.create') || request()->routeIs('bonus-course.index') || request()->routeIs('bonus-course.edit') ? 'active' : '' }}">
+                <a href="javascript:void(0)">
+                    <span>
+                        <i data-lucide="gift"></i> Bonus Course
+                    </span><i class="fa-solid fa-angle-right arrow"></i></a>
+                <ul class="submenu">
+                    <li><a href="{{ route('bonus-course.create') }}">Add Bonus Course</a></li>
+                    <li><a href="{{ route('bonus-course.index') }}">Bonus Course List</a></li>
+                </ul>
+            </li>
+
 
             {{-- Student Result Menu --}}
             <li

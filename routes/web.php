@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\StudentResultController;
 use App\Http\Controllers\Admin\StudentTestimonialController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BonusCourseController;
 use App\Http\Controllers\Admin\SmtpController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PaymentController;
@@ -45,6 +46,15 @@ Route::put('admin/orders/update-status/{id}', [OrderController::class, 'updateSt
     Route::get('course-faq/{id}/edit', [CourseFaqController::class, 'edit'])->name('course-faq.edit');
     Route::put('course-faq/{id}', [CourseFaqController::class, 'update'])->name('course-faq.update');
     Route::delete('course-faq/{id}', [CourseFaqController::class, 'destroy'])->name('course-faq.destroy');
+
+    // ============== BONOUS COURSE ROUTES =====================
+    Route::get('bonus-course', [BonusCourseController::class, 'index'])->name('bonus-course.index');
+    Route::get('bonus-course/create', [BonusCourseController::class, 'create'])->name('bonus-course.create');
+    Route::post('bonus-course', [BonusCourseController::class, 'store'])->name('bonus-course.store');
+    Route::get('bonus-course/{id}', [BonusCourseController::class, 'show'])->name('bonus-course.show');
+    Route::get('bonus-course/{id}/edit', [BonusCourseController::class, 'edit'])->name('bonus-course.edit');
+    Route::put('bonus-course/{id}', [BonusCourseController::class, 'update'])->name('bonus-course.update');
+    Route::delete('bonus-course/{id}', [BonusCourseController::class, 'destroy'])->name('bonus-course.destroy');
 
     // ================= PAYMENT API ROUTES =================
     Route::get('payment-api', [PaymentApiController::class, 'index'])->name('payment-api.index');

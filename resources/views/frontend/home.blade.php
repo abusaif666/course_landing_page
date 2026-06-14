@@ -72,61 +72,6 @@
         </div>
     </div>
 
-    {{-- <div class="seat_book">
-        <div class="container">
-            <div class="seat_book_wrapper">
-                <div class="top_area">
-                    <div class="title">এখনই সিট বুক করুন</div>
-                </div>
-                <div class="center_area">
-                    <div class="seat_book_box">
-                        <div class="box">
-                            <div class="icon_area">
-                                <div class="icon"><i class="fa fa-home"></i></div>
-                            </div>
-                            <div class="content_area">
-                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon_area">
-                                <div class="icon"><i class="fa fa-home"></i></div>
-                            </div>
-                            <div class="content_area">
-                                <p>সময়</p>
-                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
-                            </div>
-                        </div>
-                        <div class="footer_box">
-                            <div class="icon_area">
-                                <div class="icon"><i class="fa-solid fa-circle"></i></div>
-                            </div>
-                            <div class="content_area">
-                                <h3>২৫ জানুয়ারী রাত ৮ টা</h3>
-                                <h4> {{ en_to_bn($course->discount_price ?? '') }} টাকা</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom_area">
-                    <div class="content">
-                        <div class="left">পরবর্তী সিট</div>
-                        <div class="right">১০০০ টাকা</div>
-                    </div>
-                    <div>
-                        <div class="button_area">
-                            <a class="reg_btn register_btn" href="javascript:void(0)">
-                                <span>রেজিস্ট্রেশন করুন এখনই</span><span class="line"></span>
-                                <span> {{ en_to_bn($course->discount_price ?? '') }} টাকা <i
-                                        class="fa-solid fa-arrow-right"></i></span>
-                            </a>
-                        </div>
-                        <div class="total_seat">আর মাত্র <span>{{ en_to_bn($course->total_seat) }} সিট বাকি</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     <div id="countdown-data" data-created="{{ $course->created_at->timestamp }}"
         data-start="{{ $course->offer_start ? strtotime($course->offer_start) : '' }}"
@@ -178,24 +123,12 @@
                         🎁 যারা join করবেন তাদের জন্য special gift
                     </div>
 
-                    <h1 class="lp-title">২০০০ টাকা মূল্যের ‘THE PROJECT 30K’ (৩০,০০০+ ভিডিও) বান্ডিলটি আজ কোর্সের সাথে
-                        পাচ্ছেন একদম ফ্রি!</h1>
+                    <h1 class="lp-title"> {{ $bonusCourse->title }}</h1>
 
                     <div class="lp-price">
-                        <del> {{ en_to_bn('2,000') }} </del>
-                        <div class="lp-free">FREE</div>
+                        <del> {{ en_to_bn($bonusCourse->price) }} </del>
+                        <div class="lp-free">{{ $bonusCourse->discount_price ? en_to_bn($bonusCourse->discount_price).' TK' : 'FREE' }}</div>
                     </div>
-
-                    {{-- <div class="lp-info">
-                এই master class-এ যারা join করবেন, তারা আমার ৮০,০০০ টাকার Ecom Dropshipping Mastery Course টি free তে
-                করার সুযোগ পাবেন।
-                <br><br>
-                মার্কেটপ্লেস এই বিষয়ে বিস্তারিত আলোচনা করা হবে।
-            </div>
-
-            <div class="lp-small">
-                এই কোর্সে আপনি Facebook Ads, Google Ads, niche selection, scaling strategy সব কিছু শিখতে পারবেন।
-            </div> --}}
 
                     <a href="javascript:void(0)" class="lp-btn register_btn">সিট কনফার্ম করুন →</a>
 
@@ -440,7 +373,6 @@
             </div>
         </div>
     </div>
-
 
 
     <footer class="footer">

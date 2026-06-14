@@ -562,6 +562,7 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Benefits' => __DIR__ . '/../..' . '/app/Models/Benefits.php',
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
+        'App\\Models\\BonusCourse' => __DIR__ . '/../..' . '/app/Models/BonusCourse.php',
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Course' => __DIR__ . '/../..' . '/app/Models/Course.php',
         'App\\Models\\CourseFaq' => __DIR__ . '/../..' . '/app/Models/CourseFaq.php',
