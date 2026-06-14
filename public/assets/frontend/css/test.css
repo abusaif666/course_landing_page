@@ -1,0 +1,583 @@
+@media (max-width: 991px) {
+
+  .landing_page_video_area {
+    padding: 40px 0;
+  }
+
+  .who_join_this_class {
+    padding: 40px 0;
+  }
+
+  .learn_this_course {
+    padding: 40px 0;
+  }
+
+  .video_slider_wrapper {
+    padding: 40px;
+  }
+
+  .image_slider_wrapper {
+    padding: 40px 0;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area .button_area .registation_btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
+    font-size: 27px;
+    line-height: 40px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .center_area .video_player_wrapper {
+    width: 100%;
+    height: 400px;
+  }
+
+  .who_join_this_class .who_join_class_wrapper {
+    width: 100%;
+  }
+
+  .who_join_this_class .who_join_class_wrapper .who_join_class_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .who_join_class_box .box {
+    padding: 20px;
+  }
+
+  .who_join_class_box .box_icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+  }
+
+  .who_join_class_box .box_icon i {
+    font-size: 20px;
+  }
+
+  .lp-title {
+    font-size: 25px;
+    line-height: 1.4;
+  }
+
+  .countdown_bar .text {
+    font-size: 16px;
+  }
+
+  .timer .box {
+    padding: 5px 10px;
+    width: 60px;
+    line-height: 15px;
+  }
+
+  .timer .box span {
+    font-size: 15px;
+  }
+
+  .timer .box small {
+    font-size: 10px;
+  }
+
+
+
+}
+
+
+@media (max-width: 767px) {
+
+  .landing_page_video_area {
+    padding: 30px 0;
+  }
+
+  .who_join_this_class {
+    padding: 30px 0;
+  }
+
+  .learn_this_course {
+    padding: 30px 0;
+  }
+
+  .video_slider_wrapper {
+    padding: 30px;
+  }
+
+  .image_slider_wrapper {
+    padding: 30px 0;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
+    font-size: 25px;
+    line-height: normal;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .center_area .video_player_wrapper {
+    width: 100%;
+    height: 300px;
+  }
+
+
+  .lp-badge {
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+
+  .lp-title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .who_join_this_class .who_join_class_wrapper .who_join_class_box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .countdown_bar .text {
+    font-size: 16px;
+  }
+
+  .countdown_bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .timer .box {
+    padding: 5px 10px;
+    width: 60px;
+    line-height: 15px;
+  }
+
+  .timer .box span {
+    font-size: 15px;
+  }
+
+  .timer .box small {
+    font-size: 10px;
+  }
+
+  .title_area .title {
+    padding: 14px 40px;
+    font-size: 23px;
+}
+
+
+}
+
+
+@media (max-width: 525px) {
+
+
+  .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area {
+    gap: 0px;
+    margin-top: -20px;
+}
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
+    font-size: 22px;
+  }
+
+  .who_join_class_wrapper .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.lp-btn {
+    margin-top: 12px;
+}
+
+  .countdown_section {
+    padding: 20px;
+  }
+
+  .countdown_card {
+    padding: 20px 30px;
+}
+
+  .lp_box {
+    padding: 20px 0;
+}
+
+.countdown_card .title {
+    margin-bottom: 10px;
+}
+
+.countdown_card .price {
+    margin-bottom: 5px;
+}
+
+.sub_title {
+    margin-bottom: 10px;
+}
+
+.countdown_box {
+    margin-bottom: 20px;
+}
+
+  .time_box {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  .time_box span {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .time_box small {
+    font-size: 12px;
+  }
+
+  .countdown_card .price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .who_join_this_class .who_join_class_wrapper .who_join_class_box {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .videos_wrapper .slider_header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .slider_header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .countdown_card .title {
+    margin-bottom: 5px;
+}
+
+.countdown_card .price {
+    margin-bottom: 5px;
+}
+
+.sub_title {
+    margin-bottom: 5px;
+}
+
+.who_join_this_class{
+  padding: 15px 0;
+}
+
+.who_join_class_box{
+  gap: 10px;
+}
+
+.who_join_class_wrapper .title {
+  margin-bottom: 32px;
+}
+
+.learn_this_course{
+  padding: 15px 0;
+}
+
+.learn_this_course .title_area{
+  margin-bottom: 24px;
+}
+
+.title_area .title{
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+.learn_this_course .bottom_area {
+  margin-top: 15px;
+}
+
+.accordian{
+  margin: 20px;
+}
+
+
+}
+
+
+@media (max-width: 461px) {
+
+  .landing_page_video_area .landing_page_video_area_wrapper .center_area .video_player_wrapper {
+    width: 100%;
+    height: 250px;
+  }
+
+
+}
+
+@media (max-width: 445px) {
+
+  .landing_page_video_area {
+    padding: 20px 0px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content h2 {
+    font-size: 19px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .top_area .landing_page_video_content p {
+
+    font-size: 13px;
+  }
+
+  .landing_page_video_area .landing_page_video_area_wrapper .center_area .video_player_wrapper {
+    height: 170px;
+  }
+
+
+  .landing_page_video_area .landing_page_video_area_wrapper .bottom_area .button_or_total_seat_area .button_area .registation_btn {
+    font-size: 15px;
+    padding: 12px 25px;
+  }
+
+
+  .landing_page_top .site_header .site_header_wrapper .header_right .button_area .register_btn {
+    font-size: 14px;
+    padding: 10px
+  }
+
+  .countdown_section {
+    padding: 30px 0px;
+  }
+
+  .time_box {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .time_box span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .time_box small {
+    font-size: 10px;
+  }
+
+  .countdown_card {
+    padding: 20px 0px;
+  }
+
+  .btn_offer {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .lp_box {
+    padding: 20px 0;
+  }
+
+  .lp-badge {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .lp-title {
+    font-size: 15px;
+  }
+
+  .lp-btn {
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+
+  }
+
+  .learn_this_course .learn_this_course_wrapper .bottom_area .button_area .reg_btn {
+    font-size: 15px;
+    padding: 7px 10px;
+    gap: 10px;
+  }
+
+  .accordian_bottom_area .button_area .reg_btn {
+    font-size: 15px;
+    padding: 7px 10px;
+    gap: 10px;
+  }
+
+  .checkout .checkout_title_area {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .checkout_wrapper .checkout_box {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .checkout .form_course_details_area .course_box img {
+    width: 50px;
+    border-radius: 5px;
+  }
+
+
+  .learn_this_course {
+    padding: 30px 0;
+  }
+
+  .checkout .form_course_details_area .course_name {
+    font-size: 12px;
+  }
+
+  .learn_this_course .learn_this_course_wrapper .title_area {
+    margin-bottom: 14px;
+  }
+
+  .learn_this_course .learn_this_course_wrapper .title_area .title {
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+
+  .learn_this_course .learn_this_course_wrapper .learn_this_course_boxex .box {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 10px;
+  }
+
+  .learn_this_course_boxex ul li {
+    padding: 0px;
+    gap: 5px;
+  }
+
+  .learn_this_course_boxex ul li p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+
+
+
+
+  .faq-question {
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+  }
+
+  .accordian_icon {
+    font-size: 10px;
+  }
+
+
+  .countdown_bar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .countdown_bar .text {
+    font-size: 12px;
+  }
+
+  .timer .box {
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-align: center;
+    width: auto;
+    line-height: 11px;
+  }
+
+  .timer .box span {
+    font-size: 12px;
+  }
+
+  .timer .box small {
+    font-size: 9px;
+  }
+
+
+
+  .who_join_this_class {
+    padding: 30px 0;
+  }
+
+
+  .who_join_class_box {
+    gap: 15px;
+  }
+
+
+  .who_join_this_class .who_join_class_wrapper .title {
+    font-size: 22px;
+  }
+
+  .who_join_this_class .who_join_class_wrapper .who_join_class_box .box {
+    padding: 10px 15px;
+  }
+
+
+  .who_join_class_box .box_icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 10px;
+  }
+
+  .who_join_class_box .box_icon i {
+    font-size: 17px;
+  }
+
+  .who_join_class_box .box_content {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .video_slider_wrapper {
+    padding: 20px 0;
+  }
+
+  .videos_wrapper .slider_header {
+    margin-bottom: 15px;
+  }
+
+  .image_slider_wrapper {
+    padding: 20px 0;
+  }
+
+
+}
+
+
+@media (max-width: 398px) {
+
+  .countdown_box {
+    gap: 10px;
+  }
+
+
+  .time_box {
+    width: 55px;
+    height: 55px;
+    border-radius: 3px;
+  }
+
+  .time_box span {
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .time_box small {
+    font-size: 10px;
+  }
+
+  .countdown_card .price {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+
+}
